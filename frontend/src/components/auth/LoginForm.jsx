@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-hot-toast";
+import PublicNavbar from "../public/PublicNavbar";
+import Footer from "../public/Footer";
 
 const LoginForm = ({ role, title, showRegisterLink = false }) => {
     const { login, error } = useAuth();
@@ -56,12 +58,15 @@ const LoginForm = ({ role, title, showRegisterLink = false }) => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-secondary relative overflow-hidden">
-            {/* Background Blobs */}
-            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px]" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
+        <div className="min-h-screen flex flex-col bg-secondary relative overflow-x-hidden">
+            <PublicNavbar />
+            
+            <div className="flex-1 flex items-center justify-center p-4 relative w-full">
+                {/* Background Blobs */}
+                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10">
+                <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10 my-10">
                 <div className="text-center mb-10">
                     <h1 className="text-3xl font-bold text-text-main tracking-tight">
                         {role === "customer" ? "Welcome Back" : title}
@@ -126,6 +131,9 @@ const LoginForm = ({ role, title, showRegisterLink = false }) => {
                     </div>
                 )}
             </div>
+            </div>
+            
+            <Footer />
         </div>
     );
 };

@@ -7,7 +7,7 @@ const NavMegaMenu = ({ isOpen, items, onClose }) => {
 
     return (
         <div
-            className="absolute top-full left-0 w-full bg-secondary/98 backdrop-blur-2xl text-text-main shadow-2xl border-t border-border-light animate-fade-in z-50 overflow-hidden"
+            className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-2xl text-text-main shadow-2xl border-t border-border-light animate-fade-in z-50 overflow-hidden"
             onMouseEnter={(e) => e.stopPropagation()}
         >
             {/* Shiny Hive Background Effect */}

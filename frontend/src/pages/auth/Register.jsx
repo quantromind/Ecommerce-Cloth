@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../../services/api";
 import { useAuth } from "../../context/AuthContext";
+import PublicNavbar from "../../components/public/PublicNavbar";
+import Footer from "../../components/public/Footer";
 
 const Register = () => {
     const { login } = useAuth(); // We'll just login the user after auto-reg response if possible, or force login
@@ -31,14 +33,17 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-secondary relative overflow-hidden">
-            <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px]" />
+        <div className="min-h-screen flex flex-col bg-secondary relative overflow-x-hidden">
+            <PublicNavbar />
+            
+            <div className="flex-1 flex items-center justify-center p-4 relative w-full">
+                <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10">
-                <div className="text-center mb-6">
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-text-main to-text-muted bg-clip-text text-transparent">
-                        Join StyleCloth
-                    </h1>
+                <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10 my-10">
+                    <div className="text-center mb-6">
+                        <h1 className="text-3xl font-bold bg-gradient-to-r from-text-main to-text-muted bg-clip-text text-transparent">
+                            Join StyleCloth
+                        </h1>
                     <p className="text-text-muted mt-2">Create your customer account</p>
                 </div>
 
@@ -99,6 +104,8 @@ const Register = () => {
                     </Link>
                 </div>
             </div>
+            </div>
+            <Footer />
         </div>
     );
 };
