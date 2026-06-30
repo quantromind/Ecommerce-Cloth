@@ -126,7 +126,7 @@ const Home = () => {
                             opacity: index === currentSlide ? 1 : 0
                         }}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-white/60 to-white/30" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-white/30 to-transparent" />
                     </div>
                 ))}
 

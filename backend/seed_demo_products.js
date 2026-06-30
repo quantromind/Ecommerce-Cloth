@@ -93,7 +93,7 @@ const seedProducts = async () => {
             },
             {
                 creatorId, brandName: "Urban Edge", name: "Classic Denim Jacket", category: "Jackets", price: 3499,
-                images: ["https://images.unsplash.com/photo-1495105787522-5334e3ffa0ea?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1559551409-dadc959f76b8?q=80&w=800&auto=format&fit=crop"],
                 description: "Versatile blue denim jacket. A wardrobe staple.", size: "M", color: "Blue", material: "Denim", stock: 22,
                 offer: { enabled: true, type: "PERCENT", value: 15 }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: false, papers: false }, isFeatured: false
             },
@@ -123,7 +123,7 @@ const seedProducts = async () => {
             // ETHNIC WEAR
             {
                 creatorId, brandName: "Tradition Threads", name: "Embroidered Silk Kurta", category: "Ethnic Wear", price: 3999,
-                images: ["https://images.unsplash.com/photo-1597983073493-88ec35a4afc0?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=800&auto=format&fit=crop"],
                 description: "Elegant silk kurta with intricate embroidery for festive occasions.", size: "L", color: "Maroon", material: "Silk", stock: 12,
                 offer: { enabled: true, type: "PERCENT", value: 20 }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: true, papers: true }, isFeatured: true
             },
@@ -203,7 +203,7 @@ const seedProducts = async () => {
             // ETHNIC & ACTIVEWEAR
             {
                 creatorId, brandName: "Tradition Threads", name: "Designer Printed Kurta", category: "Ethnic Wear", price: 2499,
-                images: ["https://images.unsplash.com/photo-1610427306202-b2f1559810f6?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=800&auto=format&fit=crop"],
                 description: "Vibrant printed kurta for festive and casual traditional wear.", size: "M", color: "Mustard", material: "Cotton Silk", stock: 20,
                 offer: { enabled: true, type: "PERCENT", value: 25 }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: false, papers: false }, isFeatured: false
             },
@@ -236,7 +236,7 @@ const seedProducts = async () => {
             },
             {
                 creatorId, brandName: "Urban Edge", name: "Lightweight Windbreaker", category: "Jackets", price: 2199,
-                images: ["https://images.unsplash.com/photo-1545594861-3bef43679d62?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=800&auto=format&fit=crop"],
                 description: "Water-resistant windbreaker perfect for unpredictable weather.", size: "M", color: "Red/Black", material: "Nylon", stock: 25,
                 offer: { enabled: false }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: false, papers: false }, isFeatured: false
             },
@@ -248,13 +248,13 @@ const seedProducts = async () => {
             },
             {
                 creatorId, brandName: "StyleCloth Originals", name: "Utility Cargo Pants", category: "Trousers", price: 2399,
-                images: ["https://images.unsplash.com/photo-1620616169527-7cd5048d88e0?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=800&auto=format&fit=crop"],
                 description: "Durable cargo pants with multiple utility pockets.", size: "32", color: "Olive Green", material: "Cotton Twill", stock: 30,
                 offer: { enabled: false }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: false, papers: false }, isFeatured: true
             },
             {
                 creatorId, brandName: "Tradition Threads", name: "Embroidered Sherwani", category: "Ethnic Wear", price: 8999,
-                images: ["https://images.unsplash.com/photo-1599596328399-556487e4129b?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=800&auto=format&fit=crop"],
                 description: "Luxurious embroidered sherwani for weddings and grand festivities.", size: "XL", color: "Cream/Gold", material: "Silk Blend", stock: 5,
                 offer: { enabled: true, type: "FLAT", value: 1500 }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: true, papers: true }, isFeatured: true
             },
@@ -272,7 +272,7 @@ const seedProducts = async () => {
             },
             {
                 creatorId, brandName: "StyleCloth Winter", name: "Chunky Knit Cardigan", category: "Winter Wear", price: 3499,
-                images: ["https://images.unsplash.com/photo-1434389678369-e840cb19b139?q=80&w=800&auto=format&fit=crop"],
+                images: ["https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop"],
                 description: "Warm and stylish chunky knit cardigan, perfect for layering.", size: "L", color: "Burgundy", material: "Wool", stock: 20,
                 offer: { enabled: false }, trust: { authenticity: { guarantee: true, verifiedBy: "IN_HOUSE" }, condition: { type: "NEW" }, box: false, papers: false }, isFeatured: true
             }

@@ -7,12 +7,12 @@ const NavMegaMenu = ({ isOpen, items, onClose }) => {
 
     return (
         <div
-            className="absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-2xl text-text-main shadow-2xl border-t border-accent/30 animate-fade-in z-50 overflow-hidden"
+            className="absolute top-full left-0 w-full bg-secondary/98 backdrop-blur-2xl text-text-main shadow-2xl border-t border-border-light animate-fade-in z-50 overflow-hidden"
             onMouseEnter={(e) => e.stopPropagation()}
         >
             {/* Shiny Hive Background Effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03] pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.05] pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-100/50 to-transparent pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-8 py-10 relative z-10">
                 <div className="grid grid-cols-12 gap-10">
@@ -43,9 +43,9 @@ const NavMegaMenu = ({ isOpen, items, onClose }) => {
 
                     {/* Featured / Visual Column (3 cols) */}
                     <div className="col-span-3">
-                        <div className="h-full bg-gradient-to-br from-[#111] to-primary border border-border-light rounded-xl p-6 relative overflow-hidden group hover:border-accent/50 transition-all duration-500 shadow-lg hover:shadow-[#D4AF37]/10">
+                        <div className="h-full bg-gradient-to-br from-primary to-secondary border border-border-light rounded-xl p-6 relative overflow-hidden group hover:border-accent/50 transition-all duration-500 shadow-lg shadow-gray-100 hover:shadow-accent/10">
                             {/* Glass Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-text-main/0 via-white/5 to-text-main/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-gradient-to-tr from-text-main/0 via-white/50 to-text-main/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                                 <FaRegGem className="text-9xl text-accent rotate-12 transform group-hover:scale-110 transition-transform duration-700" />
