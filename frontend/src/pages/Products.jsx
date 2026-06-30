@@ -146,7 +146,7 @@ const Products = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-white/10 pb-6">
                         <div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                                {categoryFilter ? `${categoryFilter} Collection` : searchQuery ? `Results for "${searchQuery}"` : "All Footwear"}
+                                {categoryFilter ? `${categoryFilter} Collection` : searchQuery ? `Results for "${searchQuery}"` : "All Clothing"}
                             </h1>
                             <p className="text-gray-400 mt-2 text-sm tracking-wide">
                                 Showing {filteredProducts.length} curated items
@@ -242,7 +242,7 @@ const Products = () => {
                         </div>
                     ) : (
                         <div className="text-center py-20 text-gray-500">
-                            <p className="text-xl">No footwear matches your criteria.</p>
+                            <p className="text-xl">No clothing matches your criteria.</p>
                             <button
                                 onClick={() => {
                                     setActiveFilters({ brands: [], categories: [], colors: [], sizes: [], materials: [] });

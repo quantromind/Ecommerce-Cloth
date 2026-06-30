@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema(
         category: {
             type: String,
             required: true,
-            enum: ["Casual", "Formal", "Sports", "Ethnic", "Sneakers", "Chappals"],
+            enum: ["T-Shirts", "Shirts", "Jeans", "Trousers", "Jackets", "Activewear", "Ethnic Wear", "Winter Wear"],
         },
         stock: {
             type: Number,

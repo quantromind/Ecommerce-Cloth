@@ -92,7 +92,7 @@ const Navbar = () => {
             <div className="flex items-center gap-8 flex-1">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
-                    <img src="/logo.jpg" alt="Paytan Men's Logo" className="h-10 w-auto object-contain rounded-lg" />
+                    <img src="/logo.jpg" alt="StyleCloth Logo" className="h-10 w-auto object-contain rounded-lg" />
                 </Link>
 
                 {/* Navigation Links */}
@@ -205,7 +205,7 @@ const Navbar = () => {
 
                 <div className="flex items-center gap-4">
                     <div className="text-right hidden md:block leading-tight">
-                        <div className="text-sm font-bold text-gray-900 tracking-tight">{isAdmin ? "Paytan" : (user?.name || "User")}</div>
+                        <div className="text-sm font-bold text-gray-900 tracking-tight">{isAdmin ? "StyleCloth Admin" : (user?.name || "User")}</div>
                         <div className="text-[10px] items-center uppercase font-bold tracking-wider flex justify-end gap-1 text-gray-500">
                             {user?.role}
                         </div>

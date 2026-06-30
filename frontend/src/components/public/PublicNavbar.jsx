@@ -46,27 +46,27 @@ const PublicNavbar = () => {
       path: "/products",
       megaMenu: [
         {
-          title: "Traditional",
+          title: "Topwear",
           links: [
-            { name: "Kolhapuri Chappals", path: "/products?search=kolhapuri" },
+            { name: "T-Shirts", path: "/products?search=t-shirt" },
+            { name: "Shirts", path: "/products?search=shirt" },
+            { name: "Jackets", path: "/products?search=jacket" }
+          ]
+        },
+        {
+          title: "Bottomwear",
+          links: [
+            { name: "Jeans", path: "/products?search=jeans" },
+            { name: "Trousers", path: "/products?search=trousers" },
+            { name: "Shorts", path: "/products?search=shorts" }
+          ]
+        },
+        {
+          title: "Special",
+          links: [
+            { name: "Activewear", path: "/products?search=activewear" },
             { name: "Ethnic Wear", path: "/products?search=ethnic" },
-            { name: "Festive Collection", path: "/products?search=festive" }
-          ]
-        },
-        {
-          title: "Formal",
-          links: [
-            { name: "Oxfords", path: "/products?search=oxford" },
-            { name: "Loafers", path: "/products?search=loafer" },
-            { name: "Derby", path: "/products?search=derby" }
-          ]
-        },
-        {
-          title: "Casual & Active",
-          links: [
-            { name: "Sneakers", path: "/products?search=sneakers" },
-            { name: "Slip-ons", path: "/products?search=slip-on" },
-            { name: "Sandals", path: "/products?search=sandal" }
+            { name: "Winter Wear", path: "/products?search=winter" }
           ]
         }
       ]
@@ -86,7 +86,7 @@ const PublicNavbar = () => {
           title: "Collections",
           links: [
             { name: "Summer 2026", path: "/products?collection=summer" },
-            { name: "Premium Leather", path: "/products?search=leather" }
+            { name: "Premium Denim", path: "/products?search=denim" }
           ]
         }
       ]
@@ -107,7 +107,7 @@ const PublicNavbar = () => {
           links: [
             { name: "Under ₹1,000", path: "/products?price_max=1000" },
             { name: "Under ₹2,500", path: "/products?price_max=2500" },
-            { name: "Premium Footwear", path: "/products?price_min=2500" }
+            { name: "Premium Apparel", path: "/products?price_min=2500" }
           ]
         }
       ]
@@ -156,7 +156,7 @@ const PublicNavbar = () => {
 
               <Link to="/" className="flex items-center gap-2 xl:gap-3 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-1.5 shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]/30 transition-transform duration-300 group-hover:scale-105">
-                  <img src="/logo.jpg" alt="Paytan Men's Logo" className="h-12 sm:h-14 xl:h-20 w-auto object-contain rounded-lg sm:rounded-xl" />
+                  <img src="/logo.jpg" alt="StyleCloth Logo" className="h-12 sm:h-14 xl:h-20 w-auto object-contain rounded-lg sm:rounded-xl" />
                 </div>
               </Link>
             </div>

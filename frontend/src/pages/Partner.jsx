@@ -21,7 +21,7 @@ const Partner = () => {
                     <span className="text-[#D4AF37] tracking-[0.3em] text-xs font-bold uppercase mb-4 block">Exclusive Partnership Program</span>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
                         Scale Your Legacy with <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#D4AF37] to-white animate-shine bg-[length:200%_auto]">Paytan Men's</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#D4AF37] to-white animate-shine bg-[length:200%_auto]">StyleCloth</span>
                     </h1>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                         Join the world's most premier marketplace for luxury timepieces.
@@ -79,7 +79,7 @@ const Partner = () => {
 
             {/* Simple Footer */}
             <footer className="border-t border-white/10 py-12 text-center text-gray-600 text-sm">
-                <p>&copy; {new Date().getFullYear()} Paytan Men's. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} StyleCloth. All Rights Reserved.</p>
             </footer>
         </div>
     );

@@ -59,7 +59,7 @@ const ProductDetails = () => {
 
     // Initial Location Check (from LocalStorage or Default)
     useEffect(() => {
-        const cached = localStorage.getItem("shoestore_user_location");
+        const cached = localStorage.getItem("clothingstore_user_location");
         if (cached) {
             const { city } = JSON.parse(cached);
             if (city) setUserLocationCity(city);
@@ -129,7 +129,7 @@ const ProductDetails = () => {
     useEffect(() => {
         if (!product) return;
         try {
-            const existing = localStorage.getItem("recently_viewed_shoes");
+            const existing = localStorage.getItem("recently_viewed_clothes");
             let recent = existing ? JSON.parse(existing) : [];
             recent = recent.filter(p => p._id !== product._id);
             recent.unshift({
@@ -140,7 +140,7 @@ const ProductDetails = () => {
                 brandName: product.brandName
             });
             if (recent.length > 6) recent.pop();
-            localStorage.setItem("recently_viewed_shoes", JSON.stringify(recent));
+            localStorage.setItem("recently_viewed_clothes", JSON.stringify(recent));
         } catch (err) { /* ignore */ }
     }, [product]);
 
@@ -529,11 +529,11 @@ const ProductDetails = () => {
                     <SuggestedProducts currentProductId={product._id} category={product.category} brand={product.brandName} limit={4} />
 
                     {/* Recently Viewed (Manual Grid) */}
-                    {localStorage.getItem("recently_viewed_shoes") && (
+                    {localStorage.getItem("recently_viewed_clothes") && (
                         <div className="mt-16">
                             <h3 className="text-xl font-bold text-white mb-8">Recently Viewed</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                                {JSON.parse(localStorage.getItem("recently_viewed_shoes")).slice(0, 4).map(item => (
+                                {JSON.parse(localStorage.getItem("recently_viewed_clothes")).slice(0, 4).map(item => (
                                     <div key={item._id} onClick={() => navigate(`/product/${item._id}`)} className="group cursor-pointer">
                                         <div className="aspect-[4/5] bg-[#111] rounded-lg border border-white/5 overflow-hidden mb-3">
                                             <img src={item.image} alt={item.name} className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform" />

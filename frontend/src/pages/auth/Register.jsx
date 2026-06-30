@@ -37,7 +37,7 @@ const Register = () => {
             <div className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative z-10">
                 <div className="text-center mb-6">
                     <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                        Join Paytan Men's
+                        Join StyleCloth
                     </h1>
                     <p className="text-gray-400 mt-2">Create your customer account</p>
                 </div>

@@ -48,7 +48,7 @@ const SuperAdminDashboard = () => {
             to: "/admin/inventory",
             icon: <FaBox />,
             title: "My Inventory",
-            desc: "Manage your shoe catalog",
+            desc: "Manage your clothing catalog",
             color: "blue"
         },
         {
@@ -163,7 +163,7 @@ const SuperAdminDashboard = () => {
                 <div className="grid md:grid-cols-3 gap-6 text-sm">
                     <div className="flex items-start gap-3">
                         <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold shrink-0">1</span>
-                        <p className="text-gray-600">Head over to <span className="font-semibold text-gray-900">My Inventory</span> to start adding your premium shoe collection.</p>
+                        <p className="text-gray-600">Head over to <span className="font-semibold text-gray-900">My Inventory</span> to start adding your premium clothing collection.</p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold shrink-0">2</span>

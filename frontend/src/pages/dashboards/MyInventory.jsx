@@ -215,18 +215,18 @@ const MyInventory = () => {
             }
             setShowModal(false);
             fetchInventory();
-            toast.success(editingProduct ? "Shoe updated successfully!" : "Shoe created successfully!");
+            toast.success(editingProduct ? "Clothing updated successfully!" : "Clothing created successfully!");
         } catch (error) {
             toast.error(error.response?.data?.message || "Operation failed");
         }
     };
 
     const handleDelete = (id) => {
-        showConfirmationToast("Remove this shoe?", async () => {
+        showConfirmationToast("Remove this clothing item?", async () => {
             try {
                 await api.delete(`/api/products/${id}`);
                 fetchInventory();
-                toast.success("Shoe removed successfully!");
+                toast.success("Clothing removed successfully!");
             } catch (error) {
                 toast.error("Failed to delete product");
             }
@@ -239,13 +239,13 @@ const MyInventory = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-slate-800">My Collections</h1>
-                    <p className="text-slate-500 mt-1">Manage your exclusive shoes and inventory.</p>
+                    <p className="text-slate-500 mt-1">Manage your exclusive clothing and inventory.</p>
                 </div>
                 <button
                     onClick={() => openModal()}
                     className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 flex items-center gap-2 transition-transform active:scale-95"
                 >
-                    <FaPlus /> Add New Shoe
+                    <FaPlus /> Add New Clothing
                 </button>
             </div>
 
@@ -281,7 +281,7 @@ const MyInventory = () => {
                     <table className="w-full text-left">
                         <thead className="bg-slate-50 text-xs uppercase text-slate-500 font-bold border-b border-slate-100">
                             <tr>
-                                <th className="px-6 py-4">Shoe</th>
+                                <th className="px-6 py-4">Item</th>
                                 <th className="px-6 py-4">Category</th>
                                 <th className="px-6 py-4">Price</th>
                                 <th className="px-6 py-4">Stock</th>
@@ -292,7 +292,7 @@ const MyInventory = () => {
                             {loading ? (
                                 <tr><td colSpan="5" className="p-8 text-center text-slate-400">Loading inventory...</td></tr>
                             ) : filteredProducts.length === 0 ? (
-                                <tr><td colSpan="5" className="p-12 text-center text-slate-400">No shoes found. Start adding your collection.</td></tr>
+                                <tr><td colSpan="5" className="p-12 text-center text-slate-400">No items found. Start adding your collection.</td></tr>
                             ) : (
                                 currentItems.map((product) => (
                                     <tr key={product._id} className="hover:bg-slate-50/50 transition group">
@@ -381,7 +381,7 @@ const MyInventory = () => {
                     <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
                         <div className="p-6 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
                             <h2 className="text-xl font-bold text-slate-800">
-                                {editingProduct ? "Edit Shoe" : "Add New Shoe"}
+                                {editingProduct ? "Edit Clothing" : "Add New Clothing"}
                             </h2>
                             <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-slate-600 text-2xl transition">&times;</button>
                         </div>
@@ -407,12 +407,14 @@ const MyInventory = () => {
                                 <div className="space-y-1.5">
                                     <label className="text-xs uppercase text-slate-500 font-bold">Category</label>
                                     <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-teal-500 focus:bg-white focus:ring-1 focus:ring-teal-500 outline-none transition" value={form.category} onChange={e => setForm({ ...form, category: e.target.value })}>
-                                        <option value="Casual">Casual</option>
-                                        <option value="Formal">Formal</option>
-                                        <option value="Sports">Sports</option>
-                                        <option value="Ethnic">Ethnic</option>
-                                        <option value="Sneakers">Sneakers</option>
-                                        <option value="Chappals">Chappals</option>
+                                        <option value="T-Shirts">T-Shirts</option>
+                                        <option value="Shirts">Shirts</option>
+                                        <option value="Jeans">Jeans</option>
+                                        <option value="Trousers">Trousers</option>
+                                        <option value="Jackets">Jackets</option>
+                                        <option value="Activewear">Activewear</option>
+                                        <option value="Ethnic Wear">Ethnic Wear</option>
+                                        <option value="Winter Wear">Winter Wear</option>
                                     </select>
                                 </div>
                             </div>
@@ -580,7 +582,7 @@ const MyInventory = () => {
                             <div className="flex justify-end gap-4 pt-4 border-t border-slate-100">
                                 <button type="button" onClick={() => setShowModal(false)} className="px-6 py-3 text-slate-500 hover:text-slate-800 font-medium">Cancel</button>
                                 <button type="submit" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 transition-all active:scale-95">
-                                    {editingProduct ? "Save Changes" : "Publish Shoe"}
+                                    {editingProduct ? "Save Changes" : "Publish Clothing"}
                                 </button>
                             </div>
                         </form>

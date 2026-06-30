@@ -109,12 +109,12 @@ const Home = () => {
             <section className="relative h-[600px] w-full overflow-hidden bg-black">
                 {/* Slider Images */}
                 {[
-                    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1920&q=80",
-                    "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=1920&q=80",
-                    "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1920&q=80",
-                    "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1920&q=80",
-                    "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1920&q=80",
-                    "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1920&q=80"
+                    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1920&q=80",
+                    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80",
+                    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920&q=80",
+                    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80",
+                    "https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=1920&q=80",
+                    "https://images.unsplash.com/photo-1485230895905-ef40ba36e56c?auto=format&fit=crop&w=1920&q=80"
                 ].map((img, index) => (
                     <div
                         key={index}
@@ -138,7 +138,7 @@ const Home = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#febd69] to-[#f3a847]">ELEGANCE</span>
                         </h1>
                         <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 md:mb-10 font-light drop-shadow-md max-w-2xl mx-auto">
-                            Discover the world's most exclusive collection of premium footwear.
+                            Discover the world's most exclusive collection of premium clothing.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="#collection" className="bg-[#febd69] hover:bg-[#f3a847] text-black text-base md:text-lg px-8 py-3 md:px-10 md:py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-xl shadow-orange-500/20">
@@ -179,7 +179,7 @@ const Home = () => {
                     <div className="flex items-end justify-between mb-10 border-b border-white/10 pb-6">
                         <div>
                             <h2 className="text-2xl md:text-3xl font-bold">Latest Arrivals</h2>
-                            <div className="text-gray-400 text-sm mt-1">Showing {filteredProducts.length} exclusive shoes</div>
+                            <div className="text-gray-400 text-sm mt-1">Showing {filteredProducts.length} exclusive items</div>
                         </div>
 
                         <button
@@ -245,7 +245,7 @@ const Home = () => {
                         </div>
                     ) : (
                         <div className="text-center py-20 text-gray-500">
-                            <p className="text-xl">No shoes match your filters.</p>
+                            <p className="text-xl">No items match your filters.</p>
                             <button
                                 onClick={() => setActiveFilters({ brands: [], categories: [], colors: [], sizes: [], materials: [], availability: [] })}
                                 className="inline-block mt-4 text-[#D4AF37] hover:underline"
