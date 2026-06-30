@@ -53,13 +53,13 @@ const LocationSearchModal = ({ onClose, onDetectLocation, onLocationSelect }) =>
     }, [isLoaded, onLocationSelect]);
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm p-4 animate-fade-in">
             <div className="bg-white text-black w-full max-w-md rounded-xl shadow-2xl overflow-hidden relative">
 
                 {/* Header */}
                 <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                     <h3 className="font-bold text-lg text-gray-800">Change Location</h3>
-                    <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition">
+                    <button onClick={onClose} className="text-text-muted hover:text-gray-600 transition">
                         <FaTimes />
                     </button>
                 </div>
@@ -71,13 +71,13 @@ const LocationSearchModal = ({ onClose, onDetectLocation, onLocationSelect }) =>
                         {/* Detect Button */}
                         <button
                             onClick={onDetectLocation}
-                            className="w-full md:w-auto flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition transform active:scale-[0.98]"
+                            className="w-full md:w-auto flex-1 bg-green-600 hover:bg-green-700 text-text-main font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition transform active:scale-[0.98]"
                         >
                             <FaCrosshairs /> Detect my location
                         </button>
 
                         {/* OR Divider */}
-                        <div className="flex items-center gap-2 w-full md:w-auto text-gray-400 font-medium text-xs uppercase">
+                        <div className="flex items-center gap-2 w-full md:w-auto text-text-muted font-medium text-xs uppercase">
                             <span className="h-[1px] bg-gray-200 flex-1 md:hidden"></span>
                             OR
                             <span className="h-[1px] bg-gray-200 flex-1 md:hidden"></span>

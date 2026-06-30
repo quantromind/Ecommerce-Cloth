@@ -243,7 +243,7 @@ const MyInventory = () => {
                 </div>
                 <button
                     onClick={() => openModal()}
-                    className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 flex items-center gap-2 transition-transform active:scale-95"
+                    className="bg-teal-600 hover:bg-teal-700 text-text-main px-6 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 flex items-center gap-2 transition-transform active:scale-95"
                 >
                     <FaPlus /> Add New Clothing
                 </button>
@@ -305,7 +305,7 @@ const MyInventory = () => {
                                                         <div className="w-full h-full flex items-center justify-center text-slate-300"><FaImage /></div>
                                                     )}
                                                     {product.images?.length > 1 && (
-                                                        <div className="absolute bottom-0 right-0 bg-black/60 text-white text-[10px] px-1">+{product.images.length - 1}</div>
+                                                        <div className="absolute bottom-0 right-0 bg-primary/60 text-text-main text-[10px] px-1">+{product.images.length - 1}</div>
                                                     )}
                                                 </div>
                                                 <div>
@@ -357,7 +357,7 @@ const MyInventory = () => {
                                 onClick={() => paginate(i + 1)}
                                 className={`w-10 h-10 rounded-lg border flex items-center justify-center text-sm font-bold shadow-sm transition ${
                                     currentPage === i + 1 
-                                        ? "bg-teal-600 text-white border-teal-600" 
+                                        ? "bg-teal-600 text-text-main border-teal-600" 
                                         : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
                                 }`}
                             >
@@ -377,7 +377,7 @@ const MyInventory = () => {
 
             {/* Modal */}
             {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm p-4">
                     <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
                         <div className="p-6 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
                             <h2 className="text-xl font-bold text-slate-800">
@@ -429,11 +429,11 @@ const MyInventory = () => {
                                     <div key={idx} className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 group shadow-sm">
                                         <img src={img} alt={`Upload ${idx}`} className={`w-full h-full object-cover ${idx === 0 ? 'border-2 border-teal-500' : ''}`} />
                                         {/* Primary Badge */}
-                                        {idx === 0 && <span className="absolute top-1 left-1 bg-teal-500 text-white text-[8px] px-1.5 rounded uppercase font-bold shadow-sm">Main</span>}
+                                        {idx === 0 && <span className="absolute top-1 left-1 bg-teal-500 text-text-main text-[8px] px-1.5 rounded uppercase font-bold shadow-sm">Main</span>}
 
                                         {/* Set Primary Button */}
                                         {idx !== 0 && (
-                                            <button type="button" onClick={() => setPrimaryImage(idx)} className="absolute bottom-1 left-1 bg-black/50 hover:bg-teal-500 text-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition shadow-sm" title="Set as Primary">
+                                            <button type="button" onClick={() => setPrimaryImage(idx)} className="absolute bottom-1 left-1 bg-primary/50 hover:bg-teal-500 text-text-main rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition shadow-sm" title="Set as Primary">
                                                 <FaStar size={10} />
                                             </button>
                                         )}
@@ -581,7 +581,7 @@ const MyInventory = () => {
 
                             <div className="flex justify-end gap-4 pt-4 border-t border-slate-100">
                                 <button type="button" onClick={() => setShowModal(false)} className="px-6 py-3 text-slate-500 hover:text-slate-800 font-medium">Cancel</button>
-                                <button type="submit" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 transition-all active:scale-95">
+                                <button type="submit" className="bg-teal-600 hover:bg-teal-700 text-text-main px-8 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 transition-all active:scale-95">
                                     {editingProduct ? "Save Changes" : "Publish Clothing"}
                                 </button>
                             </div>

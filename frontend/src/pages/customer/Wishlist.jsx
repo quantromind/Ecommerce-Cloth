@@ -41,16 +41,16 @@ const Wishlist = () => {
         toast.success("Added to Cart");
     };
 
-    if (loading) return <div className="text-white p-8">Loading Wishlist...</div>;
+    if (loading) return <div className="text-text-main p-8">Loading Wishlist...</div>;
 
     return (
         <div className="space-y-6">
-            <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-text-main flex items-center gap-3">
                 <FaHeart className="text-red-500" /> My Wishlist
             </h1>
 
             {products.length === 0 ? (
-                <div className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-12 text-center text-gray-500">
+                <div className="bg-secondary border border-border-light rounded-2xl p-12 text-center text-text-muted">
                     <p className="text-lg">Your wishlist is empty.</p>
                     <Link to="/products" className="text-highlight hover:underline mt-2 inline-block">
                         Browse Collection
@@ -59,7 +59,7 @@ const Wishlist = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((product) => (
-                        <div key={product._id} className="bg-[#1a1a1a] border border-white/5 rounded-2xl overflow-hidden group hover:border-white/20 transition-all">
+                        <div key={product._id} className="bg-secondary border border-border-light rounded-2xl overflow-hidden group hover:border-border-light transition-all">
                             {/* Image */}
                             <Link to={`/product/${product._id}`} className="block aspect-square relative overflow-hidden">
                                 {product.images?.[0] ? (
@@ -69,7 +69,7 @@ const Wishlist = () => {
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                 ) : (
-                                    <div className="w-full h-full flex items-center justify-center bg-gray-900 text-gray-600">
+                                    <div className="w-full h-full flex items-center justify-center bg-secondary text-gray-600">
                                         No Image
                                     </div>
                                 )}
@@ -78,10 +78,10 @@ const Wishlist = () => {
                             {/* Details */}
                             <div className="p-4">
                                 <Link to={`/product/${product._id}`} className="block">
-                                    <h3 className="text-white font-semibold truncate hover:text-highlight transition">
+                                    <h3 className="text-text-main font-semibold truncate hover:text-highlight transition">
                                         {product.name}
                                     </h3>
-                                    <p className="text-xs text-gray-500 uppercase mt-1">{product.brandName}</p>
+                                    <p className="text-xs text-text-muted uppercase mt-1">{product.brandName}</p>
                                 </Link>
 
                                 <div className="flex items-center justify-between mt-3">
@@ -89,10 +89,10 @@ const Wishlist = () => {
                                 </div>
 
                                 {/* Actions */}
-                                <div className="flex gap-2 mt-4 pt-4 border-t border-white/5">
+                                <div className="flex gap-2 mt-4 pt-4 border-t border-border-light">
                                     <button
                                         onClick={() => handleAddToCart(product)}
-                                        className="flex-1 bg-white/5 hover:bg-white/10 text-white py-2 rounded-lg text-sm transition flex items-center justify-center gap-2"
+                                        className="flex-1 bg-black/5 hover:bg-black/5 text-text-main py-2 rounded-lg text-sm transition flex items-center justify-center gap-2"
                                     >
                                         <FaShoppingCart size={14} /> Add
                                     </button>

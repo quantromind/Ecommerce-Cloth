@@ -139,7 +139,7 @@ const PublicNavbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md shadow-lg py-2" : "bg-black/80 backdrop-blur-sm py-4"}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg py-2" : "bg-primary/80 backdrop-blur-sm py-4"}`}
         onMouseLeave={handleMouseLeave} // Close when leaving entire nav area
       >
         <div className="w-full px-4 lg:px-6 xl:px-10 relative">
@@ -149,14 +149,14 @@ const PublicNavbar = () => {
             <div className="flex items-center gap-3 xl:gap-4 flex-shrink-0">
               <button
                 onClick={() => setIsSidebarOpen(true)}
-                className="lg:hidden text-white text-2xl hover:text-[#D4AF37] transition"
+                className="lg:hidden text-text-main text-2xl hover:text-accent transition"
               >
                 <FaBars />
               </button>
 
               <Link to="/" className="flex items-center gap-2 xl:gap-3 group">
-                <div className="bg-white rounded-xl sm:rounded-2xl p-1 sm:p-1.5 shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]/30 transition-transform duration-300 group-hover:scale-105">
-                  <img src="/logo.jpg" alt="StyleCloth Logo" className="h-12 sm:h-14 xl:h-20 w-auto object-contain rounded-lg sm:rounded-xl" />
+                <div className="bg-transparent rounded-xl sm:rounded-2xl p-1 sm:p-1.5 transition-transform duration-300 group-hover:scale-105">
+                  <img src="/logo.png" alt="StyleCloth Logo" className="h-12 sm:h-14 xl:h-20 w-auto object-contain rounded-lg sm:rounded-xl" />
                 </div>
               </Link>
             </div>
@@ -165,7 +165,7 @@ const PublicNavbar = () => {
             {/* Middle: Desktop Nav & Search */}
             <div className="hidden lg:flex flex-1 min-w-0 mx-2 xl:mx-4 items-center gap-4 justify-center relative">
               {/* Links */}
-              <div className="flex items-center gap-4 xl:gap-8 text-[11px] xl:text-[12px] font-bold text-gray-200 h-16 whitespace-nowrap tracking-wide">
+              <div className="flex items-center gap-4 xl:gap-8 text-[11px] xl:text-[12px] font-bold text-text-main h-16 whitespace-nowrap tracking-wide">
 
                 {/* 1. Primary Links (Always Visible) */}
                 {primaryLinks.map(link => (
@@ -176,11 +176,11 @@ const PublicNavbar = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`hover:text-[#D4AF37] transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === link.name ? 'text-[#D4AF37]' : ''}`}
+                      className={`hover:text-accent transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === link.name ? 'text-accent' : ''}`}
                     >
                       {link.name}
                       {link.megaMenu && <FaChevronDown className={`text-[10px] transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
-                      <span className={`absolute left-0 bottom-[-4px] h-[2px] bg-[#D4AF37] transition-all duration-300 ${activeDropdown === link.name ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                      <span className={`absolute left-0 bottom-[-4px] h-[2px] bg-accent transition-all duration-300 ${activeDropdown === link.name ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                     </Link>
                   </div>
                 ))}
@@ -195,11 +195,11 @@ const PublicNavbar = () => {
                     >
                       <Link
                         to={link.path}
-                        className={`hover:text-[#D4AF37] transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === link.name ? 'text-[#D4AF37]' : ''}`}
+                        className={`hover:text-accent transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === link.name ? 'text-accent' : ''}`}
                       >
                         {link.name}
                         {link.megaMenu && <FaChevronDown className={`text-[10px] transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
-                        <span className={`absolute left-0 bottom-[-4px] h-[2px] bg-[#D4AF37] transition-all duration-300 ${activeDropdown === link.name ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                        <span className={`absolute left-0 bottom-[-4px] h-[2px] bg-accent transition-all duration-300 ${activeDropdown === link.name ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                       </Link>
                     </div>
                   ))}
@@ -210,18 +210,18 @@ const PublicNavbar = () => {
                   className="xl:hidden h-full flex items-center relative group cursor-pointer"
                   onMouseEnter={() => handleMouseEnter('MORE')}
                 >
-                  <span className={`hover:text-[#D4AF37] transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === 'MORE' ? 'text-[#D4AF37]' : ''}`}>
+                  <span className={`hover:text-accent transition-colors relative tracking-wide flex items-center gap-1 ${activeDropdown === 'MORE' ? 'text-accent' : ''}`}>
                     MORE <FaChevronDown className={`text-[10px] transition-transform duration-300 ${activeDropdown === 'MORE' ? 'rotate-180' : ''}`} />
                   </span>
 
                   {/* Simple Dropdown for More */}
-                  <div className={`absolute top-full right-0 w-48 bg-[#0a0a0a] border border-[#333] shadow-xl rounded-lg overflow-hidden transition-all duration-200 origin-top-right ${activeDropdown === 'MORE' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
+                  <div className={`absolute top-full right-0 w-48 bg-secondary border border-border-light shadow-xl rounded-lg overflow-hidden transition-all duration-200 origin-top-right ${activeDropdown === 'MORE' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
                     <div className="flex flex-col py-2">
                       {secondaryLinks.map(link => (
                         <Link
                           key={link.name}
                           to={link.path}
-                          className="px-4 py-3 text-sm text-gray-400 hover:text-[#D4AF37] hover:bg-white/5 transition border-b border-white/5 last:border-0"
+                          className="px-4 py-3 text-sm text-text-muted hover:text-accent hover:bg-black/5 transition border-b border-border-light last:border-0"
                         >
                           {link.name}
                         </Link>
@@ -239,24 +239,24 @@ const PublicNavbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-1.5 pl-9 text-xs font-medium text-white focus:bg-white/10 focus:border-[#D4AF37] outline-none transition-all placeholder-gray-500"
+                  className="w-full bg-black/5 border border-border-light rounded-full px-4 py-1.5 pl-9 text-xs font-medium text-text-main focus:bg-black/5 focus:border-accent outline-none transition-all placeholder-gray-400"
                 />
-                <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs group-focus-within:text-[#D4AF37] transition-colors" />
+                <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xs group-focus-within:text-accent transition-colors" />
               </form>
             </div>
 
             {/* Right: Actions */}
-            <div className="flex items-center gap-3 xl:gap-5 text-white flex-shrink-0 ml-auto">
+            <div className="flex items-center gap-3 xl:gap-5 text-text-main flex-shrink-0 ml-auto">
 
 
 
 
 
               {/* Mobile Search Trigger */}
-              <button className="lg:hidden text-xl text-gray-300 hover:text-white"><FaSearch /></button>
+              <button className="lg:hidden text-xl text-text-muted hover:text-text-main"><FaSearch /></button>
 
               {/* Wishlist */}
-              <Link to="/customer/wishlist" className="relative group text-gray-300 hover:text-[#D4AF37] transition">
+              <Link to="/customer/wishlist" className="relative group text-text-muted hover:text-accent transition">
                 <FaHeart className="text-xl" />
               </Link>
 
@@ -268,19 +268,19 @@ const PublicNavbar = () => {
               >
                 {/* Trigger: Always Icon */}
                 <div 
-                  className="cursor-pointer flex items-center justify-center p-1 text-gray-300 hover:text-[#D4AF37] transition"
+                  className="cursor-pointer flex items-center justify-center p-1 text-text-muted hover:text-accent transition"
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                 >
-                  <FaUser className={`text-xl ${isUserMenuOpen ? 'text-[#D4AF37]' : ''}`} />
+                  <FaUser className={`text-xl ${isUserMenuOpen ? 'text-accent' : ''}`} />
                 </div>
 
                 {/* Dropdown Menu */}
-                <div className={`absolute top-[80%] right-0 w-56 bg-[#0a0a0a] border border-[#333] shadow-2xl rounded-xl overflow-hidden transition-all duration-200 origin-top-right z-[9999] ${isUserMenuOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
+                <div className={`absolute top-[80%] right-0 w-56 bg-secondary border border-border-light shadow-2xl rounded-xl overflow-hidden transition-all duration-200 origin-top-right z-[9999] ${isUserMenuOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
 
                   {/* Header */}
-                  <div className="p-4 border-b border-white/5 bg-[#111]">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Account</p>
-                    <p className="font-bold text-white truncate text-sm">{user ? user.name : "Guest"}</p>
+                  <div className="p-4 border-b border-border-light bg-primary">
+                    <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Account</p>
+                    <p className="font-bold text-text-main truncate text-sm">{user ? user.name : "Guest"}</p>
                   </div>
 
                   {/* Menu Items */}
@@ -290,10 +290,10 @@ const PublicNavbar = () => {
                       <>
                         {user.role === "customer" ? (
                           <>
-                            <Link to="/customer/orders" className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-white/5 hover:text-[#D4AF37] transition">
+                            <Link to="/customer/orders" className="flex items-center gap-3 px-4 py-3 text-sm text-text-muted hover:bg-black/5 hover:text-accent transition">
                               <FaBoxOpen className="text-xs" /> My Orders
                             </Link>
-                            <Link to="/customer/wishlist" className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-white/5 hover:text-[#D4AF37] transition">
+                            <Link to="/customer/wishlist" className="flex items-center gap-3 px-4 py-3 text-sm text-text-muted hover:bg-black/5 hover:text-accent transition">
                               <FaHeart className="text-xs" /> Wishlist
                             </Link>
                           </>
@@ -302,24 +302,24 @@ const PublicNavbar = () => {
                             to={
                               (user.role === "admin") ? "/admin/inventory" : "/"
                             }
-                            className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-white/5 hover:text-[#D4AF37] transition"
+                            className="flex items-center gap-3 px-4 py-3 text-sm text-text-muted hover:bg-black/5 hover:text-accent transition"
                           >
                             <FaGem className="text-xs" /> Dashboard
                           </Link>
                         )}
-                        <button onClick={logout} className="full flex items-center gap-3 px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition text-left w-full mt-2 border-t border-white/5">
+                        <button onClick={logout} className="full flex items-center gap-3 px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition text-left w-full mt-2 border-t border-border-light">
                           <FaSignOutAlt className="text-xs" /> Sign Out
                         </button>
                       </>
                     ) : (
                       <>
-                        <Link to="/login" className="flex items-center gap-3 px-4 py-3 text-sm text-white font-bold hover:bg-white/5 hover:text-[#D4AF37] transition">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span> Sign In
+                        <Link to="/login" className="flex items-center gap-3 px-4 py-3 text-sm text-text-main font-bold hover:bg-black/5 hover:text-accent transition">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Sign In
                         </Link>
-                        <Link to="/signup" className="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-white transition">
+                        <Link to="/signup" className="flex items-center gap-3 px-4 py-3 text-sm text-text-muted hover:bg-black/5 hover:text-text-main transition">
                           <span className="w-1.5 h-1.5 rounded-full bg-gray-600"></span> Register
                         </Link>
-                        <div className="px-4 py-3 mt-1 bg-[#111] text-[10px] text-gray-500 leading-tight">
+                        <div className="px-4 py-3 mt-1 bg-primary text-[10px] text-text-muted leading-tight">
                           Access your orders, wishlist, and exclusive offers.
                         </div>
                       </>
@@ -331,11 +331,11 @@ const PublicNavbar = () => {
               {/* Cart */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative flex items-center justify-center text-gray-300 hover:text-[#D4AF37] transition pl-1"
+                className="relative flex items-center justify-center text-text-muted hover:text-accent transition pl-1"
               >
                 <FaShoppingCart className="text-xl" />
                 {cartItems.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#D4AF37] text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="absolute -top-2 -right-2 bg-accent text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-lg">
                     {cartItems.length}
                   </span>
                 )}
@@ -370,25 +370,25 @@ const PublicNavbar = () => {
       < div className={`fixed inset-0 z-[60] transform transition-transform duration-500 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         {/* Backdrop */}
-        < div className={`absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsSidebarOpen(false)}></div >
+        < div className={`absolute inset-0 bg-primary/80 backdrop-blur-sm transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsSidebarOpen(false)}></div >
 
         {/* Drawer */}
-        < div className="relative w-[300px] h-full bg-[#0a0a0a] border-r border-[#333] shadow-2xl flex flex-col text-white" >
-          <div className="p-6 border-b border-white/5 flex justify-between items-center bg-[#0f0f0f]">
+        < div className="relative w-[300px] h-full bg-secondary border-r border-border-light shadow-2xl flex flex-col text-text-main" >
+          <div className="p-6 border-b border-border-light flex justify-between items-center bg-primary">
             <div className="flex flex-col">
               <span className="font-bold text-xl tracking-wide">MENU</span>
-              <span className="text-xs text-[#D4AF37] uppercase tracking-widest">Navigation</span>
+              <span className="text-xs text-accent uppercase tracking-widest">Navigation</span>
             </div>
-            <button onClick={() => setIsSidebarOpen(false)} className="text-gray-400 hover:text-[#D4AF37] transition text-xl bg-white/5 p-2 rounded-full"><FaTimes /></button>
+            <button onClick={() => setIsSidebarOpen(false)} className="text-text-muted hover:text-accent transition text-xl bg-black/5 p-2 rounded-full"><FaTimes /></button>
           </div>
 
           <div className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
 
             {/* Nav Links with Accordion */}
             {navLinks.map((link) => (
-              <div key={link.name} className="border-b border-white/5 pb-2">
+              <div key={link.name} className="border-b border-border-light pb-2">
                 <div
-                  className="flex items-center justify-between px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer transition select-none"
+                  className="flex items-center justify-between px-4 py-3 rounded-lg hover:bg-black/5 cursor-pointer transition select-none"
                   onClick={() => toggleMobileMenu(link.name)}
                 >
                   <Link
@@ -397,12 +397,12 @@ const PublicNavbar = () => {
                       if (link.megaMenu) e.preventDefault();
                       else setIsSidebarOpen(false);
                     }}
-                    className="flex items-center gap-3 text-[#f0f0f0] font-medium"
+                    className="flex items-center gap-3 text-text-main font-medium"
                   >
-                    <FaGem className="text-xs text-[#D4AF37]" /> {link.name}
+                    <FaGem className="text-xs text-accent" /> {link.name}
                   </Link>
                   {link.megaMenu && (
-                    <span className="text-gray-500 text-xs">
+                    <span className="text-text-muted text-xs">
                       {mobileExpanded[link.name] ? <FaChevronUp /> : <FaChevronDown />}
                     </span>
                   )}
@@ -412,14 +412,14 @@ const PublicNavbar = () => {
                 <div className={`overflow-hidden transition-all duration-300 ${mobileExpanded[link.name] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                   {link.megaMenu?.map((section, idx) => (
                     <div key={idx} className="pl-10 pr-4 py-2">
-                      <h4 className="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">{section.title}</h4>
-                      <div className="flex flex-col gap-2 border-l border-white/10 pl-3">
+                      <h4 className="text-[10px] uppercase tracking-widest text-text-muted mb-2 font-bold">{section.title}</h4>
+                      <div className="flex flex-col gap-2 border-l border-border-light pl-3">
                         {section.links.map((sublink, subIdx) => (
                           <Link
                             key={subIdx}
                             to={sublink.path}
                             onClick={() => setIsSidebarOpen(false)}
-                            className="text-sm text-gray-400 hover:text-[#D4AF37] transition py-1"
+                            className="text-sm text-text-muted hover:text-accent transition py-1"
                           >
                             {sublink.name}
                           </Link>
@@ -432,13 +432,13 @@ const PublicNavbar = () => {
             ))}
 
             {/* Account */}
-            <div className="mt-8 pt-4 border-t border-white/10">
-              <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest ml-4 mb-3">My Account</h3>
+            <div className="mt-8 pt-4 border-t border-border-light">
+              <h3 className="text-text-muted text-xs font-bold uppercase tracking-widest ml-4 mb-3">My Account</h3>
               <div className="flex flex-col gap-1">
-                <Link to="/customer/orders" onClick={() => setIsSidebarOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 hover:text-[#D4AF37] transition">
+                <Link to="/customer/orders" onClick={() => setIsSidebarOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-black/5 hover:text-accent transition">
                   <FaBoxOpen className="text-xs opacity-50" /> Orders
                 </Link>
-                <Link to="/customer/wishlist" onClick={() => setIsSidebarOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 hover:text-[#D4AF37] transition">
+                <Link to="/customer/wishlist" onClick={() => setIsSidebarOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-black/5 hover:text-accent transition">
                   <FaHeart className="text-xs opacity-50" /> Wishlist
                 </Link>
 
@@ -446,13 +446,13 @@ const PublicNavbar = () => {
             </div>
           </div>
 
-          <div className="p-6 border-t border-white/5 bg-[#0f0f0f]">
+          <div className="p-6 border-t border-border-light bg-primary">
             {user ? (
-              <button onClick={() => { logout(); setIsSidebarOpen(false); }} className="w-full bg-white/5 hover:bg-red-500/10 text-gray-300 hover:text-red-400 py-3 rounded-lg font-bold transition flex items-center justify-center gap-2">
+              <button onClick={() => { logout(); setIsSidebarOpen(false); }} className="w-full bg-black/5 hover:bg-red-500/10 text-text-muted hover:text-red-400 py-3 rounded-lg font-bold transition flex items-center justify-center gap-2">
                 <FaSignOutAlt /> Sign Out
               </button>
             ) : (
-              <Link to="/login" onClick={() => setIsSidebarOpen(false)} className="block w-full bg-[#D4AF37] hover:bg-[#b5952f] text-black font-bold py-3 rounded-lg text-center transition shadow-lg shadow-yellow-500/20">
+              <Link to="/login" onClick={() => setIsSidebarOpen(false)} className="block w-full bg-accent hover:bg-[#b5952f] text-black font-bold py-3 rounded-lg text-center transition shadow-lg shadow-yellow-500/20">
                 Sign In
               </Link>
             )}
@@ -461,7 +461,7 @@ const PublicNavbar = () => {
       </div >
 
       {/* Spacer to prevent content overlap with fixed navbar */}
-      < div className="h-20 bg-black" ></div >
+      < div className="h-20 bg-primary" ></div >
     </>
   );
 };

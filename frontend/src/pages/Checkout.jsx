@@ -173,14 +173,14 @@ const Checkout = () => {
     }, [isMapsLoaded, searchInputRef]);
 
     if (!directItem && cartItems.length === 0 && !isOrderPlaced) {
-        return <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center text-white">Loading Checkout...</div>;
+        return <div className="min-h-screen bg-secondary flex items-center justify-center text-text-main">Loading Checkout...</div>;
     }
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-white p-4 lg:p-8 font-sans">
+        <div className="min-h-screen bg-secondary text-text-main p-4 lg:p-8 font-sans">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                    <FaLock className="text-[#D4AF37]" /> Secure Checkout
+                    <FaLock className="text-accent" /> Secure Checkout
                 </h1>
 
                 <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
@@ -188,92 +188,92 @@ const Checkout = () => {
                     {/* LEFT: Shipping Form */}
                     <div className="lg:col-span-2 space-y-8">
                         {/* Address Section */}
-                        <div className="bg-[#1a1a1a] p-6 lg:p-8 rounded-3xl border border-white/5 shadow-2xl">
+                        <div className="bg-secondary p-6 lg:p-8 rounded-3xl border border-border-light shadow-2xl">
                             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                <span className="bg-[#D4AF37] text-black w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                                <span className="bg-accent text-black w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
                                 Shipping Address
                             </h2>
 
                             {/* Location Search */}
                             <div className="mb-6 relative z-10">
-                                <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Auto-fill address</label>
+                                <label className="block text-xs font-bold text-text-muted uppercase mb-2">Auto-fill address</label>
                                 <div className="relative">
-                                    <FaMapMarkedAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-[#D4AF37]" />
+                                    <FaMapMarkedAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-accent" />
                                     <input
                                         ref={searchInputRef}
                                         type="text"
                                         placeholder="Search your apartment, area, or landmark..."
-                                        className="w-full bg-[#0a0a0a] border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#D4AF37] outline-none shadow-inner"
+                                        className="w-full bg-secondary border border-border-light rounded-xl pl-12 pr-4 py-3 text-text-main placeholder-gray-400 focus:border-accent outline-none shadow-inner"
                                     />
                                 </div>
                             </div>
 
                             <form id="checkout-form" onSubmit={placeOrder} className="grid md:grid-cols-2 gap-4">
-                                <input name="name" value={form.name} onChange={onChange} required placeholder="Full Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
-                                <input name="phone" value={form.phone} onChange={onChange} required placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
+                                <input name="name" value={form.name} onChange={onChange} required placeholder="Full Name" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
+                                <input name="phone" value={form.phone} onChange={onChange} required placeholder="Phone Number" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
 
-                                <input name="flatNo" value={form.flatNo} onChange={onChange} required placeholder="Flat / House No" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
-                                <input name="landmark" value={form.landmark} onChange={onChange} required placeholder="Landmark" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
+                                <input name="flatNo" value={form.flatNo} onChange={onChange} required placeholder="Flat / House No" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
+                                <input name="landmark" value={form.landmark} onChange={onChange} required placeholder="Landmark" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
 
-                                <input name="address" value={form.address} onChange={onChange} required placeholder="Area / Street" className="col-span-2 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
+                                <input name="address" value={form.address} onChange={onChange} required placeholder="Area / Street" className="col-span-2 w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
 
-                                <input name="city" value={form.city} onChange={onChange} required placeholder="City" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
-                                <input name="postalCode" value={form.postalCode} onChange={onChange} required placeholder="Postal Code" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
-                                <input name="country" value={form.country} onChange={onChange} required placeholder="Country" className="col-span-2 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-[#D4AF37] outline-none" />
+                                <input name="city" value={form.city} onChange={onChange} required placeholder="City" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
+                                <input name="postalCode" value={form.postalCode} onChange={onChange} required placeholder="Postal Code" className="w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
+                                <input name="country" value={form.country} onChange={onChange} required placeholder="Country" className="col-span-2 w-full bg-black/5 border border-border-light rounded-xl px-4 py-3 focus:border-accent outline-none" />
                             </form>
                         </div>
                     </div>
 
                     {/* RIGHT: Order Summary */}
                     <div className="lg:col-span-1 space-y-6">
-                        <div className="bg-[#1a1a1a] p-6 rounded-3xl border border-white/5 sticky top-24 shadow-2xl">
+                        <div className="bg-secondary p-6 rounded-3xl border border-border-light sticky top-24 shadow-2xl">
                             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
 
                             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar mb-6">
                                 {checkoutItems.map((item, idx) => (
                                     <div key={idx} className="flex gap-4">
-                                        <div className="w-16 h-16 bg-white/5 rounded-lg overflow-hidden flex-shrink-0 border border-white/5">
+                                        <div className="w-16 h-16 bg-black/5 rounded-lg overflow-hidden flex-shrink-0 border border-border-light">
                                             <img src={item.image || item.images?.[0]} alt={item.name} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <h4 className="text-sm font-semibold truncate hover:text-[#D4AF37] transition">{item.name}</h4>
-                                            <div className="text-xs text-gray-400 mt-1">
+                                            <h4 className="text-sm font-semibold truncate hover:text-accent transition">{item.name}</h4>
+                                            <div className="text-xs text-text-muted mt-1">
                                                 Qty: {item.qty} × ₹{(item.price).toLocaleString()}
                                             </div>
                                         </div>
-                                        <div className="text-sm font-bold text-white">
+                                        <div className="text-sm font-bold text-text-main">
                                             ₹{(item.price * item.qty).toLocaleString()}
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="border-t border-white/10 pt-4 space-y-2 text-sm text-gray-400">
+                            <div className="border-t border-border-light pt-4 space-y-2 text-sm text-text-muted">
                                 <div className="flex justify-between"><span>Subtotal</span> <span>₹{finalTotal.toLocaleString()}</span></div>
                                 <div className="flex justify-between"><span>Shipping</span> <span className="text-green-400">Free</span></div>
                                 <div className="flex justify-between"><span>Taxes</span> <span>Calculated at next step</span></div>
                             </div>
 
-                            <div className="border-t border-white/10 pt-4 mt-4">
-                                <div className="flex justify-between text-xl font-bold text-white mb-1">
+                            <div className="border-t border-border-light pt-4 mt-4">
+                                <div className="flex justify-between text-xl font-bold text-text-main mb-1">
                                     <span>Total</span>
-                                    <span className="text-[#D4AF37]">₹{finalTotal.toLocaleString()}</span>
+                                    <span className="text-accent">₹{finalTotal.toLocaleString()}</span>
                                 </div>
-                                <p className="text-xs text-gray-500 text-right">Including all taxes</p>
+                                <p className="text-xs text-text-muted text-right">Including all taxes</p>
                             </div>
 
                             {/* Trust Badges */}
                             <div className="grid grid-cols-2 gap-2 mt-6">
-                                <div className="flex items-center gap-2 text-[10px] bg-white/5 p-2 rounded text-gray-300">
+                                <div className="flex items-center gap-2 text-[10px] bg-black/5 p-2 rounded text-text-muted">
                                     <FaShieldAlt className="text-green-400" /> Secure Payment
                                 </div>
-                                <div className="flex items-center gap-2 text-[10px] bg-white/5 p-2 rounded text-gray-300">
-                                    <FaTruck className="text-[#D4AF37]" /> Fast Delivery
+                                <div className="flex items-center gap-2 text-[10px] bg-black/5 p-2 rounded text-text-muted">
+                                    <FaTruck className="text-accent" /> Fast Delivery
                                 </div>
-                                <div className="flex items-center gap-2 text-[10px] bg-white/5 p-2 rounded text-gray-300">
+                                <div className="flex items-center gap-2 text-[10px] bg-black/5 p-2 rounded text-text-muted">
                                     <FaLock className="text-blue-400" /> Data Encrypted
                                 </div>
-                                <div className="flex items-center gap-2 text-[10px] bg-white/5 p-2 rounded text-gray-300">
+                                <div className="flex items-center gap-2 text-[10px] bg-black/5 p-2 rounded text-text-muted">
                                     <FaMedal className="text-yellow-400" /> Authenticity
                                 </div>
                             </div>
@@ -281,18 +281,18 @@ const Checkout = () => {
                             {/* Terms & Action */}
                             <div className="mt-6">
                                 <div className="flex items-start gap-3 mb-4 cursor-pointer" onClick={() => setTermsAccepted(!termsAccepted)}>
-                                    <div className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition ${termsAccepted ? "bg-[#D4AF37] border-[#D4AF37]" : "border-gray-500 bg-transparent"}`}>
+                                    <div className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition ${termsAccepted ? "bg-accent border-accent" : "border-gray-500 bg-transparent"}`}>
                                         {termsAccepted && <svg className="w-3 h-3 text-black font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>}
                                     </div>
-                                    <p className="text-xs text-gray-400 select-none">
-                                        I agree to the <span className="text-white font-bold hover:underline">Terms & Conditions</span>.
+                                    <p className="text-xs text-text-muted select-none">
+                                        I agree to the <span className="text-text-main font-bold hover:underline">Terms & Conditions</span>.
                                     </p>
                                 </div>
 
                                 <button
                                     onClick={placeOrder}
                                     disabled={loading || !termsAccepted}
-                                    className="w-full bg-[#D4AF37] hover:bg-[#b5952f] text-black font-bold py-4 rounded-xl shadow-lg shadow-[#D4AF37]/20 transition-all disabled:opacity-50 disabled:grayscale transform active:scale-95"
+                                    className="w-full bg-accent hover:bg-[#b5952f] text-black font-bold py-4 rounded-xl shadow-lg shadow-accent/20 transition-all disabled:opacity-50 disabled:grayscale transform active:scale-95"
                                 >
                                     {loading ? "Processing..." : "Place Order"}
                                 </button>

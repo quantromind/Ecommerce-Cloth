@@ -46,17 +46,17 @@ const ProductForm = () => {
 
     return (
         <div className="max-w-3xl mx-auto">
-            <h1 className="text-2xl font-bold text-white mb-6">Add New Watch</h1>
+            <h1 className="text-2xl font-bold text-text-main mb-6">Add New Watch</h1>
 
-            <form onSubmit={submit} className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-6 space-y-6">
+            <form onSubmit={submit} className="bg-secondary border border-border-light rounded-2xl p-6 space-y-6">
 
                 {/* Image Upload Preview */}
                 <div className="flex justify-center mb-6">
-                    <label className="cursor-pointer group relative w-40 h-40 bg-white/5 rounded-2xl flex items-center justify-center overflow-hidden border border-dashed border-white/20 hover:border-highlight transition">
+                    <label className="cursor-pointer group relative w-40 h-40 bg-black/5 rounded-2xl flex items-center justify-center overflow-hidden border border-dashed border-border-light hover:border-highlight transition">
                         {form.image ? (
                             <img src={form.image} alt="Preview" className="w-full h-full object-cover" />
                         ) : (
-                            <div className="text-center text-gray-500 text-xs">
+                            <div className="text-center text-text-muted text-xs">
                                 <span className="block text-2xl mb-2">+</span>
                                 Upload Image
                             </div>
@@ -67,19 +67,19 @@ const ProductForm = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label className="text-xs text-gray-500 uppercase">Model Name</label>
-                        <input name="name" onChange={onChange} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight" placeholder="Rolex Submariner" required />
+                        <label className="text-xs text-text-muted uppercase">Model Name</label>
+                        <input name="name" onChange={onChange} className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight" placeholder="Rolex Submariner" required />
                     </div>
                     <div>
-                        <label className="text-xs text-gray-500 uppercase">Brand Name (Display)</label>
-                        <input name="brandName" onChange={onChange} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight" placeholder="Rolex" required />
+                        <label className="text-xs text-text-muted uppercase">Brand Name (Display)</label>
+                        <input name="brandName" onChange={onChange} className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight" placeholder="Rolex" required />
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                        <label className="text-xs text-gray-500 uppercase">Category</label>
-                        <select name="category" onChange={onChange} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight">
+                        <label className="text-xs text-text-muted uppercase">Category</label>
+                        <select name="category" onChange={onChange} className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight">
                             <option value="Men">Men</option>
                             <option value="Women">Women</option>
                             <option value="Unisex">Unisex</option>
@@ -88,21 +88,21 @@ const ProductForm = () => {
                         </select>
                     </div>
                     <div>
-                        <label className="text-xs text-gray-500 uppercase">Price ($)</label>
-                        <input name="price" type="number" onChange={onChange} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight" placeholder="12500" required />
+                        <label className="text-xs text-text-muted uppercase">Price ($)</label>
+                        <input name="price" type="number" onChange={onChange} className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight" placeholder="12500" required />
                     </div>
                     <div>
-                        <label className="text-xs text-gray-500 uppercase">Stock Qty</label>
-                        <input name="stock" type="number" onChange={onChange} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight" placeholder="5" required />
+                        <label className="text-xs text-text-muted uppercase">Stock Qty</label>
+                        <input name="stock" type="number" onChange={onChange} className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight" placeholder="5" required />
                     </div>
                 </div>
 
                 <div>
-                    <label className="text-xs text-gray-500 uppercase">Description</label>
-                    <textarea name="description" onChange={onChange} rows="4" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white mt-1 outline-none focus:border-highlight" placeholder="Detailed specs..." required />
+                    <label className="text-xs text-text-muted uppercase">Description</label>
+                    <textarea name="description" onChange={onChange} rows="4" className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main mt-1 outline-none focus:border-highlight" placeholder="Detailed specs..." required />
                 </div>
 
-                <button disabled={loading} className="w-full bg-highlight hover:bg-highlight/90 text-white font-bold py-3 rounded-xl transition">
+                <button disabled={loading} className="w-full bg-highlight hover:bg-highlight/90 text-text-main font-bold py-3 rounded-xl transition">
                     {loading ? "Saving..." : "Publish Product"}
                 </button>
             </form>

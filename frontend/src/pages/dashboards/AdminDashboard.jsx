@@ -98,7 +98,7 @@ const SuperAdminDashboard = () => {
                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
                         Welcome to Command Center
                     </h1>
-                    <p className="text-gray-500 max-w-xl">
+                    <p className="text-text-muted max-w-xl">
                         Manage your store inventory, review customer orders, and monitor your business performance from one central dashboard.
                     </p>
                 </div>
@@ -114,12 +114,12 @@ const SuperAdminDashboard = () => {
                     >
                         <div className="flex items-center justify-between relative z-10">
                             <div>
-                                <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">{stat.label}</p>
+                                <p className="text-xs text-text-muted font-bold uppercase tracking-wider mb-1">{stat.label}</p>
                                 <p className="text-3xl font-extrabold text-gray-900">
                                     {loading ? "..." : stat.value}
                                 </p>
                             </div>
-                            <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center text-white text-xl shadow-md`}>
+                            <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center text-text-main text-xl shadow-md`}>
                                 {stat.icon}
                             </div>
                         </div>
@@ -140,7 +140,7 @@ const SuperAdminDashboard = () => {
                             className={`relative bg-white border border-gray-100 shadow-sm p-6 rounded-2xl hover:shadow-md hover:border-blue-200 transition-all group ${card.soon ? 'opacity-60 pointer-events-none' : ''}`}
                         >
                             {card.soon && (
-                                <span className="absolute top-4 right-4 bg-gray-100 text-gray-500 text-[10px] font-bold px-2 py-0.5 rounded uppercase">
+                                <span className="absolute top-4 right-4 bg-gray-100 text-text-muted text-[10px] font-bold px-2 py-0.5 rounded uppercase">
                                     Soon
                                 </span>
                             )}
@@ -151,7 +151,7 @@ const SuperAdminDashboard = () => {
                                 {card.title}
                                 <FaArrowRight className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-blue-500" />
                             </h3>
-                            <p className="text-sm text-gray-500">{card.desc}</p>
+                            <p className="text-sm text-text-muted">{card.desc}</p>
                         </Link>
                     ))}
                 </div>

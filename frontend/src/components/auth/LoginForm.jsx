@@ -56,23 +56,23 @@ const LoginForm = ({ role, title, showRegisterLink = false }) => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center p-4 bg-secondary relative overflow-hidden">
             {/* Background Blobs */}
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px]" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
 
-            <div className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative z-10">
+            <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10">
                 <div className="text-center mb-10">
-                    <h1 className="text-3xl font-bold text-white tracking-tight">
+                    <h1 className="text-3xl font-bold text-text-main tracking-tight">
                         {role === "customer" ? "Welcome Back" : title}
                     </h1>
                     {role !== "customer" && (
-                        <p className="text-gray-400 mt-2 text-xs uppercase tracking-widest opacity-70">
+                        <p className="text-text-muted mt-2 text-xs uppercase tracking-widest opacity-70">
                             Restricted Access Portal
                         </p>
                     )}
                     {role === "customer" && (
-                        <p className="text-gray-400 mt-2 text-sm">
+                        <p className="text-text-muted mt-2 text-sm">
                             Sign in to access your wishlist, orders, and more.
                         </p>
                     )}
@@ -86,41 +86,41 @@ const LoginForm = ({ role, title, showRegisterLink = false }) => {
 
                 <form onSubmit={onSubmit} className="space-y-6">
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Email Address</label>
+                        <label className="text-xs font-bold text-text-muted uppercase tracking-wider ml-1">Email Address</label>
                         <input
                             name="email"
                             value={form.email}
                             onChange={onChange}
                             type="email"
-                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all text-white placeholder-gray-600 focus:bg-black/60"
+                            className="w-full bg-primary/40 border border-border-light rounded-xl px-4 py-3.5 outline-none focus:border-accent focus:ring-1 focus:ring-[#D4AF37] transition-all text-text-main placeholder-gray-600 focus:bg-primary/60"
                             placeholder="name@example.com"
                         />
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Password</label>
+                        <label className="text-xs font-bold text-text-muted uppercase tracking-wider ml-1">Password</label>
                         <input
                             name="password"
                             value={form.password}
                             onChange={onChange}
                             type="password"
-                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all text-white placeholder-gray-600 focus:bg-black/60"
+                            className="w-full bg-primary/40 border border-border-light rounded-xl px-4 py-3.5 outline-none focus:border-accent focus:ring-1 focus:ring-[#D4AF37] transition-all text-text-main placeholder-gray-600 focus:bg-primary/60"
                             placeholder="••••••••"
                         />
                     </div>
 
                     <button
                         disabled={submitting}
-                        className="w-full bg-[#D4AF37] hover:bg-[#b5952f] text-black font-bold py-4 rounded-xl shadow-lg shadow-[#D4AF37]/20 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm mt-4"
+                        className="w-full bg-accent hover:bg-[#b5952f] text-black font-bold py-4 rounded-xl shadow-lg shadow-accent/20 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider text-sm mt-4"
                     >
                         {submitting ? "Authenticating..." : role === "customer" ? "Sign In" : "Access Dashboard"}
                     </button>
                 </form>
 
                 {showRegisterLink && (
-                    <div className="mt-8 text-center text-sm text-gray-500">
+                    <div className="mt-8 text-center text-sm text-text-muted">
                         Don't have an account?{" "}
-                        <Link to="/register" className="text-[#D4AF37] font-bold hover:underline ml-1">
+                        <Link to="/register" className="text-accent font-bold hover:underline ml-1">
                             Join Now
                         </Link>
                     </div>

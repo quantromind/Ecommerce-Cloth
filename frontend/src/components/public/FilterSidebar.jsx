@@ -2,15 +2,15 @@ import React, { useState, useEffect, useMemo } from "react"; // eslint-disable-l
 import { FaChevronDown, FaChevronUp, FaTimes } from "react-icons/fa";
 
 const FilterSection = ({ title, isOpen, toggle, children }) => (
-    <div className="border-b border-white/10 py-5">
+    <div className="border-b border-border-light py-5">
         <button
             onClick={toggle}
             className="flex items-center justify-between w-full text-left focus:outline-none group"
         >
-            <span className="text-sm font-bold tracking-wider text-white uppercase group-hover:text-[#D4AF37] transition-colors">
+            <span className="text-sm font-bold tracking-wider text-text-main uppercase group-hover:text-accent transition-colors">
                 {title}
             </span>
-            <span className="text-gray-500 text-xs">
+            <span className="text-text-muted text-xs">
                 {isOpen ? <FaChevronUp /> : <FaChevronDown />}
             </span>
         </button>
@@ -19,7 +19,7 @@ const FilterSection = ({ title, isOpen, toggle, children }) => (
 );
 
 const CheckboxItem = ({ label, count, checked, onChange }) => (
-    <label className="flex items-center justify-between cursor-pointer group hover:bg-white/5 p-1 rounded transition select-none">
+    <label className="flex items-center justify-between cursor-pointer group hover:bg-black/5 p-1 rounded transition select-none">
         <input
             type="checkbox"
             checked={!!checked}
@@ -28,10 +28,10 @@ const CheckboxItem = ({ label, count, checked, onChange }) => (
             aria-label={label}
         />
         <div className="flex items-center gap-3">
-            <div className={`w-4 h-4 border border-gray-600 rounded-sm flex items-center justify-center transition-all ${checked ? 'bg-[#D4AF37] border-[#D4AF37]' : 'bg-transparent group-hover:border-[#D4AF37]'}`}>
-                {checked && <div className="w-2 h-2 bg-black rounded-sm" />}
+            <div className={`w-4 h-4 border border-gray-600 rounded-sm flex items-center justify-center transition-all ${checked ? 'bg-accent border-accent' : 'bg-transparent group-hover:border-accent'}`}>
+                {checked && <div className="w-2 h-2 bg-primary rounded-sm" />}
             </div>
-            <span className={`text-sm ${checked ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>
+            <span className={`text-sm ${checked ? 'text-text-main' : 'text-text-muted group-hover:text-text-muted'}`}>
                 {label}
             </span>
         </div>
@@ -131,20 +131,20 @@ const FilterSidebar = ({
         <>
             {/* Mobile Overlay */}
             <div
-                className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                className={`fixed inset-0 bg-primary/80 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 onClick={onClose}
             />
 
             {/* Sidebar */}
             <aside className={`
                 fixed lg:sticky top-0 lg:top-24 left-0 h-full lg:h-[calc(100vh-8rem)] 
-                w-[280px] bg-[#0a0a0a] border-r border-white/10 overflow-y-auto custom-scrollbar
+                w-[280px] bg-secondary border-r border-border-light overflow-y-auto custom-scrollbar
                 transform transition-transform duration-300 z-50 lg:z-0 lg:translate-x-0 p-5
                 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
             `}>
                 <div className="flex justify-between items-center lg:hidden mb-6">
-                    <h2 className="text-xl font-bold text-white">Filters</h2>
-                    <button onClick={onClose} className="text-white/50 hover:text-white">
+                    <h2 className="text-xl font-bold text-text-main">Filters</h2>
+                    <button onClick={onClose} className="text-text-main/50 hover:text-text-main">
                         <FaTimes size={20} />
                     </button>
                 </div>
@@ -152,14 +152,14 @@ const FilterSidebar = ({
                 {/* Price Section */}
                 <FilterSection title="Price" isOpen={sections.price} toggle={() => toggleSection('price')}>
                     <div className="px-1">
-                        <div className="flex justify-between text-xs text-gray-400 mb-2 font-mono">
+                        <div className="flex justify-between text-xs text-text-muted mb-2 font-mono">
                             <span>{formatPrice(priceRange[0])}</span>
                             <span>{formatPrice(priceRange[1])}</span>
                         </div>
                         {/* Simple Dual Range Slider Simulation using two inputs */}
                         <div className="relative h-1 bg-gray-800 rounded-full mb-6">
                             <div
-                                className="absolute h-full bg-[#D4AF37] rounded-full"
+                                className="absolute h-full bg-accent rounded-full"
                                 style={{
                                     left: `${(priceRange[0] / (counts.maxPrice || 100000)) * 100}%`,
                                     right: `${100 - (priceRange[1] / (counts.maxPrice || 100000)) * 100}%`
@@ -189,11 +189,11 @@ const FilterSidebar = ({
                             />
                             {/* Thumbs (Visual only) */}
                             <div
-                                className="absolute top-1/2 -mt-1.5 w-3 h-3 bg-white border-2 border-[#D4AF37] rounded-full shadow cursor-pointer pointer-events-none"
+                                className="absolute top-1/2 -mt-1.5 w-3 h-3 bg-white border-2 border-accent rounded-full shadow cursor-pointer pointer-events-none"
                                 style={{ left: `${(priceRange[0] / (counts.maxPrice || 100000)) * 100}%` }}
                             />
                             <div
-                                className="absolute top-1/2 -mt-1.5 w-3 h-3 bg-white border-2 border-[#D4AF37] rounded-full shadow cursor-pointer pointer-events-none"
+                                className="absolute top-1/2 -mt-1.5 w-3 h-3 bg-white border-2 border-accent rounded-full shadow cursor-pointer pointer-events-none"
                                 style={{ left: `${(priceRange[1] / (counts.maxPrice || 100000)) * 100}%` }}
                             />
                         </div>
@@ -202,15 +202,15 @@ const FilterSidebar = ({
                                 type="number"
                                 value={priceRange[0]}
                                 onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
-                                className="w-full bg-[#111] border border-white/10 text-white text-xs p-2 rounded focus:border-[#D4AF37] outline-none"
+                                className="w-full bg-primary border border-border-light text-text-main text-xs p-2 rounded focus:border-accent outline-none"
                                 placeholder="Min"
                             />
-                            <span className="text-gray-500 self-center">-</span>
+                            <span className="text-text-muted self-center">-</span>
                             <input
                                 type="number"
                                 value={priceRange[1]}
                                 onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-                                className="w-full bg-[#111] border border-white/10 text-white text-xs p-2 rounded focus:border-[#D4AF37] outline-none"
+                                className="w-full bg-primary border border-border-light text-text-main text-xs p-2 rounded focus:border-accent outline-none"
                                 placeholder="Max"
                             />
                         </div>

@@ -37,15 +37,15 @@ const Unauthorized = () => {
   const { logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center">
-      <div className="bg-[#1a1a1a] border border-white/10 p-6 rounded-2xl text-center">
+    <div className="min-h-screen bg-secondary text-text-main flex items-center justify-center">
+      <div className="bg-secondary border border-border-light p-6 rounded-2xl text-center">
         <h1 className="text-xl font-bold">Unauthorized</h1>
         <p className="text-sm opacity-80 mt-2">You do not have access to this page.</p>
         <div className="mt-6 flex justify-center gap-4">
-          <button onClick={() => window.location.href = '/'} className="text-sm text-gray-400 hover:text-white underline">Go Home</button>
+          <button onClick={() => window.location.href = '/'} className="text-sm text-text-muted hover:text-text-main underline">Go Home</button>
           <button
             onClick={() => { logout(); window.location.href = '/login'; }}
-            className="bg-highlight hover:bg-highlight/80 text-white px-4 py-2 rounded-lg text-sm font-bold transition"
+            className="bg-highlight hover:bg-highlight/80 text-text-main px-4 py-2 rounded-lg text-sm font-bold transition"
           >
             Logout / Switch Account
           </button>

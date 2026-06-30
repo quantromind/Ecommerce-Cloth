@@ -92,7 +92,7 @@ const Navbar = () => {
             <div className="flex items-center gap-8 flex-1">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
-                    <img src="/logo.jpg" alt="StyleCloth Logo" className="h-10 w-auto object-contain rounded-lg" />
+                    <img src="/logo.png" alt="StyleCloth Logo" className="h-10 w-auto object-contain rounded-lg" />
                 </Link>
 
                 {/* Navigation Links */}
@@ -141,7 +141,7 @@ const Navbar = () => {
                     >
                         <FaBell className="text-lg group-hover:rotate-12 transition-transform" />
                         {notifCount > 0 && (
-                            <span className="absolute -top-0.5 -right-0.5 min-w-5 h-5 flex items-center justify-center text-[10px] font-bold rounded-full ring-2 ring-white bg-red-500 text-white">
+                            <span className="absolute -top-0.5 -right-0.5 min-w-5 h-5 flex items-center justify-center text-[10px] font-bold rounded-full ring-2 ring-white bg-red-500 text-text-main">
                                 {notifCount > 9 ? "9+" : notifCount}
                             </span>
                         )}
@@ -157,9 +157,9 @@ const Navbar = () => {
 
                             <div className="max-h-72 overflow-y-auto custom-scrollbar">
                                 {loadingNotifs ? (
-                                    <div className="p-6 text-center text-gray-500 text-sm">Loading...</div>
+                                    <div className="p-6 text-center text-text-muted text-sm">Loading...</div>
                                 ) : notifications.length === 0 ? (
-                                    <div className="p-6 text-center text-gray-500 text-sm">
+                                    <div className="p-6 text-center text-text-muted text-sm">
                                         <FaBell className="text-2xl mx-auto mb-2 opacity-30" />
                                         No new notifications
                                     </div>
@@ -174,7 +174,7 @@ const Navbar = () => {
                                                     </div>
                                                     <div className="flex-1 min-w-0">
                                                         <div className="text-sm font-medium text-gray-900 truncate">Order {n._id.slice(-6).toUpperCase()}</div>
-                                                        <div className="text-xs text-gray-500 truncate">₹{n.totalPrice.toLocaleString()} • {n.orderStatus}</div>
+                                                        <div className="text-xs text-text-muted truncate">₹{n.totalPrice.toLocaleString()} • {n.orderStatus}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,20 +206,20 @@ const Navbar = () => {
                 <div className="flex items-center gap-4">
                     <div className="text-right hidden md:block leading-tight">
                         <div className="text-sm font-bold text-gray-900 tracking-tight">{isAdmin ? "StyleCloth Admin" : (user?.name || "User")}</div>
-                        <div className="text-[10px] items-center uppercase font-bold tracking-wider flex justify-end gap-1 text-gray-500">
+                        <div className="text-[10px] items-center uppercase font-bold tracking-wider flex justify-end gap-1 text-text-muted">
                             {user?.role}
                         </div>
                     </div>
 
                     <div className="relative group">
-                        <div className="w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 text-gray-500 border border-gray-200">
+                        <div className="w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 text-text-muted border border-gray-200">
                             <FaUserCircle className="text-2xl" />
                         </div>
                     </div>
 
                     <button
                         onClick={logout}
-                        className="text-gray-500 hover:text-red-500 transition ml-1 p-2 hover:bg-red-50 rounded-lg"
+                        className="text-text-muted hover:text-red-500 transition ml-1 p-2 hover:bg-red-50 rounded-lg"
                         title="Logout"
                     >
                         <FaSignOutAlt className="text-lg" />

@@ -31,15 +31,15 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center p-4 bg-secondary relative overflow-hidden">
             <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-highlight/20 rounded-full blur-[100px]" />
 
-            <div className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative z-10">
+            <div className="w-full max-w-md bg-black/5 backdrop-blur-xl border border-border-light rounded-3xl p-8 shadow-2xl relative z-10">
                 <div className="text-center mb-6">
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-text-main to-text-muted bg-clip-text text-transparent">
                         Join StyleCloth
                     </h1>
-                    <p className="text-gray-400 mt-2">Create your customer account</p>
+                    <p className="text-text-muted mt-2">Create your customer account</p>
                 </div>
 
                 {error && (
@@ -50,49 +50,49 @@ const Register = () => {
 
                 <form onSubmit={onSubmit} className="space-y-4">
                     <div>
-                        <label className="text-xs font-medium text-gray-400 uppercase tracking-wider ml-1">Full Name</label>
+                        <label className="text-xs font-medium text-text-muted uppercase tracking-wider ml-1">Full Name</label>
                         <input
                             name="name"
                             value={form.name}
                             onChange={onChange}
-                            className="w-full mt-1 bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-highlight text-white"
+                            className="w-full mt-1 bg-primary/20 border border-border-light rounded-xl px-4 py-3 outline-none focus:border-highlight text-text-main"
                             placeholder="Adil Khan"
                         />
                     </div>
 
                     <div>
-                        <label className="text-xs font-medium text-gray-400 uppercase tracking-wider ml-1">Email Address</label>
+                        <label className="text-xs font-medium text-text-muted uppercase tracking-wider ml-1">Email Address</label>
                         <input
                             name="email"
                             value={form.email}
                             onChange={onChange}
                             type="email"
-                            className="w-full mt-1 bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-highlight text-white"
+                            className="w-full mt-1 bg-primary/20 border border-border-light rounded-xl px-4 py-3 outline-none focus:border-highlight text-text-main"
                             placeholder="you@example.com"
                         />
                     </div>
 
                     <div>
-                        <label className="text-xs font-medium text-gray-400 uppercase tracking-wider ml-1">Password</label>
+                        <label className="text-xs font-medium text-text-muted uppercase tracking-wider ml-1">Password</label>
                         <input
                             name="password"
                             value={form.password}
                             onChange={onChange}
                             type="password"
-                            className="w-full mt-1 bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-highlight text-white"
+                            className="w-full mt-1 bg-primary/20 border border-border-light rounded-xl px-4 py-3 outline-none focus:border-highlight text-text-main"
                             placeholder="••••••••"
                         />
                     </div>
 
                     <button
                         disabled={submitting}
-                        className="w-full bg-highlight hover:bg-highlight/90 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-highlight/20 transition-all mt-2 disabled:opacity-50"
+                        className="w-full bg-highlight hover:bg-highlight/90 text-text-main font-bold py-3.5 rounded-xl shadow-lg shadow-highlight/20 transition-all mt-2 disabled:opacity-50"
                     >
                         {submitting ? "Creating Account..." : "Create Account"}
                     </button>
                 </form>
 
-                <div className="mt-8 text-center text-sm text-gray-500">
+                <div className="mt-8 text-center text-sm text-text-muted">
                     Already have an account?{" "}
                     <Link to="/login" className="text-highlight hover:underline">
                         Login here

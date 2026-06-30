@@ -5,8 +5,8 @@ const PendingApproval = () => {
   const { logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-primary text-white flex items-center justify-center p-4">
-      <div className="max-w-lg bg-secondary border border-white/10 rounded-2xl p-6">
+    <div className="min-h-screen bg-primary text-text-main flex items-center justify-center p-4">
+      <div className="max-w-lg bg-secondary border border-border-light rounded-2xl p-6">
         <h1 className="text-xl font-bold">Pending Approval</h1>
         <p className="text-sm opacity-80 mt-2">
           Your account is created but not verified by Super Admin yet.

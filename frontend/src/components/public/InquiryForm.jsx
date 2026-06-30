@@ -42,7 +42,7 @@ const InquiryForm = ({ onClose, inline = false }) => {
 
     if (step === 2) {
         return (
-            <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+            <div className="fixed inset-0 bg-primary/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
                 <div className="bg-white text-black p-8 rounded-lg shadow-2xl max-w-md w-full text-center">
                     <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✓</div>
                     <h2 className="text-2xl font-bold mb-2">Application Submitted</h2>
@@ -58,13 +58,13 @@ const InquiryForm = ({ onClose, inline = false }) => {
     }
 
     return (
-        <div className={inline ? "w-full" : "fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"}>
+        <div className={inline ? "w-full" : "fixed inset-0 bg-primary/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"}>
             <div className={`w-full max-w-2xl bg-[#fcfcfc] text-[#0f1111] rounded-lg shadow-xl overflow-hidden flex flex-col ${inline ? "" : "max-h-[90vh]"}`}>
 
                 {/* Header - Amazon Style */}
                 <div className="bg-[#f0f2f2] border-b border-[#d5d9d9] px-6 py-4 flex justify-between items-center">
                     <h2 className="text-xl font-bold">Sell on Paytaan Men's</h2>
-                    <button onClick={onClose} className="text-gray-500 hover:text-black font-bold text-xl">&times;</button>
+                    <button onClick={onClose} className="text-text-muted hover:text-black font-bold text-xl">&times;</button>
                 </div>
 
                 <div className="p-6 overflow-y-auto">
@@ -179,7 +179,7 @@ const InquiryForm = ({ onClose, inline = false }) => {
                             >
                                 {submitting ? "Submitting Application..." : "Submit Application"}
                             </button>
-                            <p className="text-xs text-gray-500 mt-4 text-center">
+                            <p className="text-xs text-text-muted mt-4 text-center">
                                 By submitting, you agree to Paytaan Men's <button className="text-blue-600 underline">Conditions of Use</button> and <button className="text-blue-600 underline">Privacy Notice</button>.
                             </p>
                         </div>

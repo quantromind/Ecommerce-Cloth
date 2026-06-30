@@ -19,7 +19,7 @@ const TrackingTimeline = ({ status }) => {
         <div className="w-full mt-6 py-4">
             <div className="relative flex justify-between">
                 {/* Connecting Line (Background) */}
-                <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 rounded-full z-0"></div>
+                <div className="absolute top-1/2 left-0 w-full h-1 bg-black/5 -translate-y-1/2 rounded-full z-0"></div>
 
                 {/* Connecting Line (Progress) - Simplified logic */}
                 <div className={`absolute top-1/2 left-0 h-1 bg-green-500 -translate-y-1/2 rounded-full z-0 transition-all duration-1000 ease-out`}
@@ -40,7 +40,7 @@ const TrackingTimeline = ({ status }) => {
                         <div key={index} className="relative z-10 flex flex-col items-center group">
                             <div className={`
                                 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-4 transition-all duration-500
-                                ${isCompleted ? 'bg-green-500 border-black text-black scale-100' : 'bg-[#1a1a1a] border-white/20 text-gray-500 scale-90'}
+                                ${isCompleted ? 'bg-green-500 border-black text-black scale-100' : 'bg-secondary border-border-light text-text-muted scale-90'}
                                 ${isCurrent ? 'ring-4 ring-green-500/20' : ''}
                             `}>
                                 <step.icon className="text-xs md:text-sm" />

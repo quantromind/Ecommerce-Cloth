@@ -101,12 +101,12 @@ const Home = () => {
 
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#D4AF37] selection:text-black">
+        <div className="min-h-screen bg-secondary text-text-main selection:bg-accent selection:text-black">
             {/* Custom Public Header */}
             <PublicNavbar />
 
             {/* Hero Section - Premium Slider */}
-            <section className="relative h-[600px] w-full overflow-hidden bg-black">
+            <section className="relative h-[600px] w-full overflow-hidden bg-primary">
                 {/* Slider Images */}
                 {[
                     "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1920&q=80",
@@ -126,18 +126,18 @@ const Home = () => {
                             opacity: index === currentSlide ? 1 : 0
                         }}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/40 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-white/60 to-white/30" />
                     </div>
                 ))}
 
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center z-10 px-6">
                     <div className="text-center max-w-4xl pt-20">
-                        <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 drop-shadow-2xl tracking-tight leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-text-main mb-6 drop-shadow-2xl tracking-tight leading-tight">
                             TIMELESS <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#febd69] to-[#f3a847]">ELEGANCE</span>
                         </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 md:mb-10 font-light drop-shadow-md max-w-2xl mx-auto">
+                        <p className="text-lg sm:text-xl md:text-2xl text-text-main mb-8 md:mb-10 font-light drop-shadow-md max-w-2xl mx-auto">
                             Discover the world's most exclusive collection of premium clothing.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -154,7 +154,7 @@ const Home = () => {
                         <button
                             key={i}
                             onClick={() => setCurrentSlide(i)}
-                            className={`w-3 h-3 rounded-full transition-all ${i === currentSlide ? "bg-[#febd69] w-10" : "bg-white/50 hover:bg-white"}`}
+                            className={`w-3 h-3 rounded-full transition-all ${i === currentSlide ? "bg-[#febd69] w-10" : "bg-black/50 hover:bg-white"}`}
                         />
                     ))}
                 </div>
@@ -176,17 +176,17 @@ const Home = () => {
 
                 {/* Main Content */}
                 <section className="flex-1 px-6 pb-20 w-full">
-                    <div className="flex items-end justify-between mb-10 border-b border-white/10 pb-6">
+                    <div className="flex items-end justify-between mb-10 border-b border-border-light pb-6">
                         <div>
                             <h2 className="text-2xl md:text-3xl font-bold">Latest Arrivals</h2>
-                            <div className="text-gray-400 text-sm mt-1">Showing {filteredProducts.length} exclusive items</div>
+                            <div className="text-text-muted text-sm mt-1">Showing {filteredProducts.length} exclusive items</div>
                         </div>
 
                         <button
                             onClick={() => setIsSidebarOpen(true)}
-                            className="flex lg:hidden items-center gap-2 px-4 py-2 border border-white/10 rounded-full text-sm hover:bg-white/5 transition"
+                            className="flex lg:hidden items-center gap-2 px-4 py-2 border border-border-light rounded-full text-sm hover:bg-black/5 transition"
                         >
-                            <FaFilter className="text-[#D4AF37]" /> Filter
+                            <FaFilter className="text-accent" /> Filter
                         </button>
                     </div>
 
@@ -194,8 +194,8 @@ const Home = () => {
                     {filteredProducts.length > 0 ? (
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-8">
                             {filteredProducts.map((p) => (
-                                <div key={p._id} className="group relative bg-[#111] rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
-                                    <div className="aspect-[4/5] bg-[#1a1a1a] relative overflow-hidden flex items-center justify-center p-4">
+                                <div key={p._id} className="group relative bg-primary rounded-3xl overflow-hidden border border-border-light hover:border-border-light transition-all duration-300 hover:-translate-y-1">
+                                    <div className="aspect-[4/5] bg-secondary relative overflow-hidden flex items-center justify-center p-4">
                                         {/* Discount Badge */}
                                         {p.pricing?.isOnOffer && (
                                             <div className="absolute top-3 left-3 bg-[#e11d48] text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 shadow-lg" style={{ fontFamily: 'monospace' }}>
@@ -224,31 +224,31 @@ const Home = () => {
                                     </div>
 
                                     <div className="p-3 md:p-5">
-                                        <div className="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-medium mb-1 truncate">{p.brandName}</div>
-                                        <h3 className="text-sm md:text-lg font-bold text-white mb-2 truncate">{p.name}</h3>
+                                        <div className="text-xs md:text-sm text-text-muted uppercase tracking-widest font-medium mb-1 truncate">{p.brandName}</div>
+                                        <h3 className="text-sm md:text-lg font-bold text-text-main mb-2 truncate">{p.name}</h3>
                                         <div className="flex items-center justify-between">
                                             <div className="flex flex-col">
                                                 {p.pricing?.isOnOffer ? (
                                                     <div className="flex items-center gap-1 md:gap-2">
                                                         <span className="text-base md:text-xl text-highlight font-bold">₹{p.pricing.finalPrice.toLocaleString()}</span>
-                                                        <span className="text-xs md:text-sm text-gray-500 line-through hidden sm:inline">₹{p.pricing.mrp.toLocaleString()}</span>
+                                                        <span className="text-xs md:text-sm text-text-muted line-through hidden sm:inline">₹{p.pricing.mrp.toLocaleString()}</span>
                                                     </div>
                                                 ) : (
                                                     <span className="text-base md:text-xl text-highlight font-bold">₹{p.price.toLocaleString()}</span>
                                                 )}
                                             </div>
-                                            <span className="text-[10px] md:text-xs text-gray-500 border border-white/10 px-1 md:px-2 py-0.5 md:py-1 rounded hidden sm:inline">{p.category}</span>
+                                            <span className="text-[10px] md:text-xs text-text-muted border border-border-light px-1 md:px-2 py-0.5 md:py-1 rounded hidden sm:inline">{p.category}</span>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-text-muted">
                             <p className="text-xl">No items match your filters.</p>
                             <button
                                 onClick={() => setActiveFilters({ brands: [], categories: [], colors: [], sizes: [], materials: [], availability: [] })}
-                                className="inline-block mt-4 text-[#D4AF37] hover:underline"
+                                className="inline-block mt-4 text-accent hover:underline"
                             >
                                 Clear all filters
                             </button>

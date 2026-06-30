@@ -11,20 +11,20 @@ const TeamManagement = () => {
         <div className="space-y-8 p-6">
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">Team Management</h1>
-                    <p className="text-gray-400 mt-1">Create and manage access for your store managers.</p>
+                    <h1 className="text-3xl font-bold text-text-main">Team Management</h1>
+                    <p className="text-text-muted mt-1">Create and manage access for your store managers.</p>
                 </div>
                 <button
                     onClick={() => setShowModal(true)}
-                    className="bg-highlight hover:bg-highlight/90 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-highlight/20 flex items-center gap-2"
+                    className="bg-highlight hover:bg-highlight/90 text-text-main px-6 py-3 rounded-xl font-bold shadow-lg shadow-highlight/20 flex items-center gap-2"
                 >
                     <FaUserPlus /> Create Manager
                 </button>
             </div>
 
-            <div className="bg-[#1a1a1a] border border-white/5 rounded-2xl overflow-hidden">
+            <div className="bg-secondary border border-border-light rounded-2xl overflow-hidden">
                 <table className="w-full text-left">
-                    <thead className="bg-black/40 text-xs uppercase text-gray-500 font-bold">
+                    <thead className="bg-primary/40 text-xs uppercase text-text-muted font-bold">
                         <tr>
                             <th className="px-6 py-4">Name</th>
                             <th className="px-6 py-4">Email</th>
@@ -33,17 +33,17 @@ const TeamManagement = () => {
                             <th className="px-6 py-4 text-right">Actions</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/5 text-sm text-gray-300">
+                    <tbody className="divide-y divide-white/5 text-sm text-text-muted">
                         {managers.map((m) => (
-                            <tr key={m.id} className="hover:bg-white/5 transition">
-                                <td className="px-6 py-4 font-bold text-white flex items-center gap-3">
+                            <tr key={m.id} className="hover:bg-black/5 transition">
+                                <td className="px-6 py-4 font-bold text-text-main flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center"><FaUserShield /></div>
                                     {m.name}
                                 </td>
-                                <td className="px-6 py-4 text-gray-400">{m.email}</td>
-                                <td className="px-6 py-4"><span className="bg-white/5 px-3 py-1 rounded-full text-xs">Manager</span></td>
+                                <td className="px-6 py-4 text-text-muted">{m.email}</td>
+                                <td className="px-6 py-4"><span className="bg-black/5 px-3 py-1 rounded-full text-xs">Manager</span></td>
                                 <td className="px-6 py-4"><span className="text-green-400 bg-green-500/10 px-3 py-1 rounded-full text-xs">Active</span></td>
-                                <td className="px-6 py-4 text-right text-gray-500 hover:text-white cursor-pointer">Edit</td>
+                                <td className="px-6 py-4 text-right text-text-muted hover:text-text-main cursor-pointer">Edit</td>
                             </tr>
                         ))}
                     </tbody>
@@ -52,17 +52,17 @@ const TeamManagement = () => {
 
             {/* Modal Placeholder */}
             {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-                    <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl w-full max-w-md p-6">
-                        <h2 className="text-xl font-bold text-white mb-4">Add New Manager</h2>
-                        <p className="text-gray-400 text-sm mb-6">Create a sub-account with limited access.</p>
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/80 backdrop-blur-sm p-4">
+                    <div className="bg-secondary border border-border-light rounded-2xl w-full max-w-md p-6">
+                        <h2 className="text-xl font-bold text-text-main mb-4">Add New Manager</h2>
+                        <p className="text-text-muted text-sm mb-6">Create a sub-account with limited access.</p>
                         <form className="space-y-4">
-                            <input className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white outline-none" placeholder="Full Name" />
-                            <input className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white outline-none" placeholder="Email Address" />
-                            <input className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white outline-none" placeholder="Password" type="password" />
+                            <input className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main outline-none" placeholder="Full Name" />
+                            <input className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main outline-none" placeholder="Email Address" />
+                            <input className="w-full bg-primary/20 border border-border-light rounded-xl px-4 py-3 text-text-main outline-none" placeholder="Password" type="password" />
                             <div className="flex justify-end gap-3 pt-4">
-                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-gray-400">Cancel</button>
-                                <button type="button" onClick={() => setShowModal(false)} className="bg-highlight px-6 py-2 rounded-lg text-white font-bold">Create Account</button>
+                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-text-muted">Cancel</button>
+                                <button type="button" onClick={() => setShowModal(false)} className="bg-highlight px-6 py-2 rounded-lg text-text-main font-bold">Create Account</button>
                             </div>
                         </form>
                     </div>

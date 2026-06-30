@@ -130,9 +130,9 @@ const LocationPickerMap = ({ initialLat, initialLng, onLocationChange }) => {
     }, [isLoaded, initialLat, initialLng, onLocationChange]);
 
     return (
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-white/20">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-border-light">
             {!isLoaded && (
-                <div className="absolute inset-0 bg-gray-900 flex items-center justify-center text-gray-500">
+                <div className="absolute inset-0 bg-secondary flex items-center justify-center text-text-muted">
                     Loading Map...
                 </div>
             )}
@@ -142,11 +142,11 @@ const LocationPickerMap = ({ initialLat, initialLng, onLocationChange }) => {
             {/* Fixed Center Pin (Uber Style) */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -mt-4 pointer-events-none z-10 flex flex-col items-center">
                 <FaMapMarkerAlt className="text-4xl text-red-500 drop-shadow-lg" />
-                <div className="w-2 h-2 bg-black/50 rounded-full mt-1 blur-[1px]"></div>
+                <div className="w-2 h-2 bg-primary/50 rounded-full mt-1 blur-[1px]"></div>
             </div>
 
             {/* Helper Text */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg pointer-events-none z-10 whitespace-nowrap">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/80 backdrop-blur text-text-main px-3 py-1 rounded-full text-xs font-bold shadow-lg pointer-events-none z-10 whitespace-nowrap">
                 Move map to refine location
             </div>
         </div>

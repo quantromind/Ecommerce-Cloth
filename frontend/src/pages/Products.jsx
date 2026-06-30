@@ -124,7 +124,7 @@ const Products = () => {
     }, [categoryFilter, searchQuery, allProducts, activeFilters, priceRange]);
 
     return (
-        <div className="bg-[#0a0a0a] min-h-screen text-white font-sans">
+        <div className="bg-secondary min-h-screen text-text-main font-sans">
             <PublicNavbar />
 
             <div className="max-w-[1600px] mx-auto flex">
@@ -143,12 +143,12 @@ const Products = () => {
                 <main className="flex-1 px-4 sm:px-6 lg:px-8 py-24 w-full">
 
                     {/* Header */}
-                    <div className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-white/10 pb-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-border-light pb-6">
                         <div>
-                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+                            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-text-main to-gray-500 bg-clip-text text-transparent">
                                 {categoryFilter ? `${categoryFilter} Collection` : searchQuery ? `Results for "${searchQuery}"` : "All Clothing"}
                             </h1>
-                            <p className="text-gray-400 mt-2 text-sm tracking-wide">
+                            <p className="text-text-muted mt-2 text-sm tracking-wide">
                                 Showing {filteredProducts.length} curated items
                             </p>
                         </div>
@@ -156,15 +156,15 @@ const Products = () => {
                         <div className="flex items-center gap-4 mt-6 md:mt-0">
                             <button
                                 onClick={() => setIsSidebarOpen(true)}
-                                className="flex lg:hidden items-center gap-2 px-4 py-2 border border-white/10 rounded-full text-sm hover:bg-white/5 transition"
+                                className="flex lg:hidden items-center gap-2 px-4 py-2 border border-border-light rounded-full text-sm hover:bg-black/5 transition"
                             >
-                                <FaFilter className="text-[#D4AF37]" /> Filter
+                                <FaFilter className="text-accent" /> Filter
                             </button>
 
-                            <select className="bg-transparent border border-white/10 rounded-full px-4 py-2 text-sm outline-none cursor-pointer hover:bg-white/5">
-                                <option className="bg-black">Sort by: Recommended</option>
-                                <option className="bg-black">Price: High to Low</option>
-                                <option className="bg-black">Price: Low to High</option>
+                            <select className="bg-transparent border border-border-light rounded-full px-4 py-2 text-sm outline-none cursor-pointer hover:bg-black/5">
+                                <option className="bg-primary">Sort by: Recommended</option>
+                                <option className="bg-primary">Price: High to Low</option>
+                                <option className="bg-primary">Price: Low to High</option>
                             </select>
                         </div>
                     </div>
@@ -173,14 +173,14 @@ const Products = () => {
                     {(activeFilters.brands.length > 0 || activeFilters.colors.length > 0 || activeFilters.sizes.length > 0 || activeFilters.materials.length > 0) && (
                         <div className="flex flex-wrap gap-2 mb-6">
                             {[...activeFilters.brands, ...activeFilters.colors, ...activeFilters.sizes, ...activeFilters.materials].map(filter => (
-                                <span key={filter} className="text-xs bg-white/10 px-3 py-1 rounded-full flex items-center gap-2">
+                                <span key={filter} className="text-xs bg-black/5 px-3 py-1 rounded-full flex items-center gap-2">
                                     {filter}
                                     {/* Simplified remove for demo - ideally calling specific remove handler */}
                                 </span>
                             ))}
                             <button
                                 onClick={() => setActiveFilters({ brands: [], categories: [], colors: [], sizes: [], materials: [], availability: [] })}
-                                className="text-xs text-[#D4AF37] hover:underline ml-2"
+                                className="text-xs text-accent hover:underline ml-2"
                             >
                                 Clear All
                             </button>
@@ -191,11 +191,11 @@ const Products = () => {
                     {filteredProducts.length > 0 ? (
                         <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
                             {filteredProducts.map((product) => (
-                                <div key={product._id} className="group relative bg-[#121212] rounded-xl overflow-hidden shadow-lg border border-white/5 hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col">
+                                <div key={product._id} className="group relative bg-secondary rounded-xl overflow-hidden shadow-lg border border-border-light hover:border-accent/50 transition-all duration-300 flex flex-col">
 
                                     {/* Badge */}
                                     {product.isNew && (
-                                        <span className="absolute top-3 left-3 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10">
+                                        <span className="absolute top-3 left-3 bg-accent text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10">
                                             New Arrival
                                         </span>
                                     )}
@@ -210,7 +210,7 @@ const Products = () => {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                                             <button
                                                 onClick={(e) => { e.preventDefault(); addToCart(product); }}
-                                                className="w-full bg-[#D4AF37] hover:bg-[#b5952f] text-black font-bold py-3 rounded shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+                                                className="w-full bg-accent hover:bg-[#b5952f] text-black font-bold py-3 rounded shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
                                             >
                                                 <FaShoppingCart /> Add to Cart
                                             </button>
@@ -219,21 +219,21 @@ const Products = () => {
 
                                     <div className="p-3 md:p-5 flex-1 flex flex-col">
                                         <div className="flex justify-between items-start mb-1 md:mb-2">
-                                            <div className="text-[10px] md:text-xs text-[#D4AF37] tracking-widest uppercase font-bold truncate">{product.brandName || product.brand || "Brand"}</div>
-                                            <button className="text-gray-500 hover:text-red-500 transition"><FaHeart className="w-3 md:w-4" /></button>
+                                            <div className="text-[10px] md:text-xs text-accent tracking-widest uppercase font-bold truncate">{product.brandName || product.brand || "Brand"}</div>
+                                            <button className="text-text-muted hover:text-red-500 transition"><FaHeart className="w-3 md:w-4" /></button>
                                         </div>
                                         <Link to={`/product/${product._id}`} className="block mb-1 md:mb-2">
-                                            <h3 className="text-sm md:text-lg font-bold text-white leading-tight group-hover:text-[#D4AF37] transition-colors line-clamp-2">{product.name}</h3>
+                                            <h3 className="text-sm md:text-lg font-bold text-text-main leading-tight group-hover:text-accent transition-colors line-clamp-2">{product.name}</h3>
                                         </Link>
 
                                         {/* Specs (New) */}
-                                        <div className="flex gap-2 text-[10px] text-gray-500 mb-3 uppercase tracking-wide">
+                                        <div className="flex gap-2 text-[10px] text-text-muted mb-3 uppercase tracking-wide">
                                             {product.size && <span>Size {product.size}</span>}
                                             {product.size && product.material && <span>•</span>}
                                             {product.material && <span>{product.material}</span>}
                                         </div>
 
-                                        <div className="mt-auto text-gray-300 font-medium">
+                                        <div className="mt-auto text-text-muted font-medium">
                                             ₹{product.price.toLocaleString()}
                                         </div>
                                     </div>
@@ -241,14 +241,14 @@ const Products = () => {
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-text-muted">
                             <p className="text-xl">No clothing matches your criteria.</p>
                             <button
                                 onClick={() => {
                                     setActiveFilters({ brands: [], categories: [], colors: [], sizes: [], materials: [] });
                                     setPriceRange([0, 1000000]); // Reset to max
                                 }}
-                                className="inline-block mt-4 text-[#D4AF37] hover:underline"
+                                className="inline-block mt-4 text-accent hover:underline"
                             >
                                 Clear all filters
                             </button>

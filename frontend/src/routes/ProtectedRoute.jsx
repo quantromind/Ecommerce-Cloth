@@ -13,7 +13,7 @@ const ProtectedRoute = ({ allowedRoles }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-primary text-white">
+      <div className="min-h-screen flex items-center justify-center bg-primary text-text-main">
         <div className="text-sm opacity-80">Loading...</div>
       </div>
     );

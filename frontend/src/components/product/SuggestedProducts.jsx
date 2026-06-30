@@ -42,12 +42,12 @@ const SuggestedProducts = ({ currentProductId, category, brand, limit = 4, title
     if (loading || products.length === 0) return null;
 
     return (
-        <div className="mt-12 border-t border-white/5 pt-8">
-            <h3 className="text-xl font-bold mb-6 text-white">{title}</h3>
+        <div className="mt-12 border-t border-border-light pt-8">
+            <h3 className="text-xl font-bold mb-6 text-text-main">{title}</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {products.map(product => (
-                    <div key={product._id} className="group bg-[#1a1a1a] rounded-xl border border-white/5 overflow-hidden hover:border-[#D4AF37]/30 transition-all">
-                        <div className="relative aspect-[3/4] overflow-hidden bg-[#111]">
+                    <div key={product._id} className="group bg-secondary rounded-xl border border-border-light overflow-hidden hover:border-accent/30 transition-all">
+                        <div className="relative aspect-[3/4] overflow-hidden bg-primary">
                             <img
                                 src={product.images?.[0] || product.image}
                                 alt={product.name}
@@ -68,24 +68,24 @@ const SuggestedProducts = ({ currentProductId, category, brand, limit = 4, title
                                         addToCart(product);
                                         toast.success("Added to Cart");
                                     }}
-                                    className="w-full bg-[#D4AF37] text-black font-bold py-2 rounded-lg hover:bg-[#b5952f] transition text-center text-sm shadow-lg flex items-center justify-center gap-2"
+                                    className="w-full bg-accent text-black font-bold py-2 rounded-lg hover:bg-[#b5952f] transition text-center text-sm shadow-lg flex items-center justify-center gap-2"
                                 >
                                     <FaShoppingCart size={14} /> Add to Cart
                                 </button>
                             </div>
                         </div>
                         <div className="p-3">
-                            <div className="text-[10px] text-[#D4AF37] uppercase font-bold tracking-wider mb-1">
+                            <div className="text-[10px] text-accent uppercase font-bold tracking-wider mb-1">
                                 {product.brandName || product.brand}
                             </div>
                             <Link to={`/product/${product._id}`} className="block">
-                                <h4 className="text-sm font-medium text-white truncate group-hover:text-[#D4AF37] transition-colors">
+                                <h4 className="text-sm font-medium text-text-main truncate group-hover:text-accent transition-colors">
                                     {product.name}
                                 </h4>
                             </Link>
                             <div className="flex items-center justify-between mt-2">
-                                <span className="text-white font-bold">₹{product.price.toLocaleString()}</span>
-                                <div className="flex items-center text-[10px] text-gray-500 gap-1">
+                                <span className="text-text-main font-bold">₹{product.price.toLocaleString()}</span>
+                                <div className="flex items-center text-[10px] text-text-muted gap-1">
                                     <FaStar className="text-yellow-500" /> 4.5
                                 </div>
                             </div>
